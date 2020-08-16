@@ -1,3 +1,3 @@
 # TODO's
 
-1. check at bash profile time if this repo is up to date
+1. [v] check at bash time if this repo is clean
