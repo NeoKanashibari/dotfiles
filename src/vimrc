@@ -1,0 +1,207 @@
+set nocompatible | set encoding=UTF-8
+
+" Install vim-plug if not already installed
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall
+endif
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+if filereadable(expand("~/.vim/autoload/plug.vim"))
+    call plug#begin()
+    "" Style ****************************************************************************
+    Plug 'lifepillar/vim-solarized8'| Plug 'morhetz/gruvbox'
+    Plug 'vim-airline/vim-airline'  | Plug 'vim-airline/vim-airline-themes'
+    Plug 'ryanoasis/vim-devicons'
+    Plug 'mattn/emmet-vim'
+    "" Snippets *************************************************************************
+    "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+    " Syntax ****************************************************************************
+    Plug 'kergoth/vim-bitbake'
+    "" Other ****************************************************************************
+    Plug 'tpope/vim-fugitive' | Plug 'airblade/vim-gitgutter'
+    Plug 'scrooloose/nerdtree'
+    Plug 'tpope/vim-surround'
+    Plug 'chrisbra/Colorizer'
+    Plug 'kovetskiy/sxhkd-vim'
+    call plug#end()
+else
+    filetype plugin indent on
+endif
+
+filetype plugin indent on
+syntax on
+let mapleader = " "
+
+" Q start the Ex Mode, I don't like this mode
+map Q gq
+
+"set autochdir " move the path acorrding the the file your are in.
+" I don't think i like this anymore
+
+colorscheme solarized8_high | set background=light   " Default to light
+set expandtab smarttab shiftwidth=4 tabstop=4     " tabs is from spaces
+set colorcolumn=90
+set laststatus=2 noshowmode noshowcmd " TODO: This should only be true if airline is on
+set nu rnu
+set cursorline
+
+" Disable colmun used when copy past with the mouse.
+" TODO: do GitGutterToggle too !!
+nnoremap <leader>& :set nu! rnu!<cr>
+
+set autoread " Automatically reload files changed outside of vim
+set shortmess=atIWocOTF | set cmdheight=1 " Better 'Clean promts
+set splitbelow | set splitright
+
+" Files we don't want listed
+set wildignore+=.hg,.git,.svn                    " Version control
+set wildignore+=*.jpg,*.bmp,*.gif,*.png,*.jpeg   " binary images
+set wildignore+=*.o,*.obj,*.exe,*.dll,*.manifest " compiled object files
+set wildignore+=*.DS_Store                       " OSX metadata
+set wildignore+=*.luac                           " Lua byte code
+set wildignore+=*.pyc,*.pyo                      " Python byte code
+
+
+" Smart way to move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+
+set clipboard+=unnamedplus
+vnoremap <leader>y  "+y
+nnoremap <leader>Y  "+yg_
+nnoremap <leader>y  "+y
+nnoremap <leader>yy  "+yy
+nnoremap <leader>p "+p
+nnoremap <leader>P "+P
+vnoremap <leader>p "+p
+vnoremap <leader>P "+P
+" Buffer manipulations
+nmap <C-l> :bnext<CR>
+nmap <C-h> :bprevious<CR>
+nmap <C-q> :bdelete<CR>
+
+let s:enabled = 0
+function! ColorToggle()
+    if s:enabled
+        set background=dark | colorscheme gruvbox | let s:enabled = 0
+    else
+        set background=light | colorscheme solarized8_high | let s:enabled = 1
+    endif
+endfunction
+nnoremap <leader>cc :call ColorToggle()<cr>
+
+" Return to last edit position when opening files.
+au BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$")
+    \ | exe "normal! g'\""
+    \ | endif
+
+map <leader>ss :set spell!<cr>
+
+" Save a this with root
+command W w !sudo tee % > /dev/null
+
+" Display EOL caracters
+nnoremap <leader>i :set list!<cr>
+
+" Delete trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+" function! StripTrailingWhitespace()
+"     if !&binary && &filetype !=# 'diff'
+"         normal! mz
+"         normal! Hmy
+"         %s/\s\+$//e
+"         normal! 'yz<CR>
+"         normal! `z
+"     endif
+" endfunction
+" nnoremap <leader>dtw :call StripTrailingWhitespace()<cr>
+
+" Exec command under the line
+nnoremap <silent> <leader>ee :.w !bash<cr>
+
+map <C-o> :NERDTreeToggle<CR>
+
+" Plugin configuration ------------------------------------------------------------------
+" gitgutter -----------------------------------------------------------------------------
+set signcolumn=auto " Display git info on the column if needed
+let g:gitgutter_max_signs = 4096 " signs are the glyph/icon on the column
+nmap ghs <Plug>(GitGutterStageHunk)
+nmap ghu <Plug>(GitGutterUndoHunk)
+"let g:gitgutter_override_sign_column_highlight = 0
+"highlight SignColumn ctermbg=lightgreen
+highlight GitGutterAdd    guifg=#ee9900 ctermfg=2 ctermbg=0
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3 ctermbg=0
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1 ctermbg=0
+
+" airline config ------------------------------------------------------------------------
+let g:airline_theme='night_owl' "molokai base16_isotope night_owl
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'unique_tail'
+let g:airline#extensions#tabline#left_alt_sep = ""
+let g:airline#extensions#tabline#left_sep = ""
+
+" emmet-vim config ----------------------------------------------------------------------
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+
+
+" YouCompleteMe -------------------------------------------------------------------------
+let g:ycm_key_list_select_completion=[]
+let g:ycm_key_list_previous_completion=[]
+let g:ycm_max_diagnostics_to_display=0
+let g:ycm_show_diagnostics_ui = 0
+let g:ycm_confirm_extra_conf = 0
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" ultisnips -----------------------------------------------------------------------------
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-z>"
+let g:UltiSnipsJumpBackwardTrigger="<c-a>"
+
+" bitbake -------------------------------------------------------------------------------
+" Misc-----------------------------------------------------------------------------------
+if has('gui_running')
+    set guicursor=a:block,a:blinkon0
+
+    mode aware cursors
+    set guicursor+=o:hor50-Cursor
+    set guicursor+=n:Cursor
+    set guicursor+=i-ci-sm:InsertCursor-ver25
+    set guicursor+=r-cr:ReplaceCursor-hor20
+    set guicursor+=c:CommandCursor
+    set guicursor+=v-ve:VisualCursor
+
+    hi def link InsertCursor Cursor
+    hi def link ReplaceCursor Cursor
+    hi def link CommandCursor Cursor
+    hi def link VisualCursor Cursor
+else
+    " Adjust cursor in insert mode (bar) and replace mode (underline)
+    let &t_SI = "\e[6 q"
+    try
+        let &t_SR = "\e[4 q"
+    catch
+    endtry
+    let &t_EI = "\e[2 q"
+
+    if !exists('$CURSORCODE')
+        let $CURSORCODE = "\e[0 q"
+    endif
+
+    augroup vimrc_cursor
+        au!
+        " Reset cursor on start and exit
+        autocmd VimEnter * silent !printf '\e[2 q\n'
+        autocmd VimLeave * silent !printf "$CURSORCODE"
+    augroup END
+endif

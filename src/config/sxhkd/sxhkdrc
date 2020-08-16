@@ -1,0 +1,38 @@
+super + alt + control + {h,j,k,l} ; {0-9}
+	bspc node @{west,south,north,east} -r 0.{0-9}
+super + alt + {y,u,i,o}
+	bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
+super + shift + {y,u,i,o}
+	bspc node -z {right -20 0,top 0 20,bottom 0 -20,left 20 0}
+super + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+	bspc desktop -f ^{1-9,10}
+super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla,agrave}
+	bspc node -d ^{1-9,10} && bspc desktop -f ^{1-9,10}
+super + {_,shift + }{h,j,k,l}
+	bspc node -{f,s} {west,south,north,east}
+super + a
+	bspc node -c
+super + f
+	{firefox}
+super + r
+	exec /usr/local/bin/st -f "mononoki Nerd Font Mono:pixelsize=20:antialias=true:autohint=true" ranger
+super + {_,shift + }t
+	{st -f "mononoki Nerd Font Mono:pixelsize=25:antialias=true:autohint=true",st}
+super + shift + r
+	~/.config/scripts/reloadenv
+super + shift + a
+	slock -m "Locked at : $(date)"
+super + shift + p
+	mypaint
+super + shift + v
+	virtualbox
+super + shift + c
+	teams
+super + m
+	bspc node @/ -R 90
+super + b;super + n
+	~/.config/dmenu/dmenu_bookmark
+F2
+	~/repos/perso/dmenubooks/dmenubooks
+super + b;super + r
+	~/.config/dmenu/dmenu_repos

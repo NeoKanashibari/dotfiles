@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+font="mononoki Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
+menu_color="#D35351"
+menu_text_color="#F5F5F5"
+menu_bg_color="#505050"
+menu_select_bg_color="#F3F3F3"
+browser="vivaldi-stable"
+notify-send "editor: $EDITOR"
+
+cat ~/.config/bookmarks/* \
+    | dmenu -l 30 -p "$BROWSER bookmarks :" \
+    -fn "$font" -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color -nb $menu_bg_color | $browser

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+pidof polybar && kill $(pidof polybar)
+pidof sxhkd && kill $(pidof sxhkd)
+pidof compton && kill $(pidof compton)
+pidof unclutter && kill $(pidof unclutter)
+
+compton &
+unclutter &
+sxhkd 2>&1 | tee ~/.local/var/log/sxhkd.log &
+polybar bspwmbar 2>&1 | tee ~/.local/var/log/polybar.log &
+
+# if [[ $(xrandr --query | grep DP-2 | awk '{print $2}') = "connected" ]];then
+#     polybar bspwmbar2 &
+# fi

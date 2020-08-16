@@ -1,0 +1,24 @@
+[alias]
+    st = status
+    co = checkout
+    ci = commit
+    br = branch
+    df = diff
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit -34
+    log1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+
+[color]
+    ui = auto
+
+[core]
+    autocrlf = input
+    ignorecase = false
+    whitespace = cr-at-eol
+    editor = vim
+    pager = less -x4
+
+[diff]
+	tool = vimdiff --no-prompt
+
+[merge]
+	tool = vimdiff --no-prompt

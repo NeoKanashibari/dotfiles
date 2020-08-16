@@ -1,0 +1,72 @@
+[section/base]
+include-file = ~/.config/polybar/polybarmodules
+include-file = ~/.config/polybar/hardware_monitoring
+include-file = ~/.config/polybar/soundsmodules
+include-file = ~/.config/polybar/networkbar
+include-file = ~/.config/polybar/windowmanager
+
+[settings]
+screenchange-reload = true
+#compositing-background = xor
+#compositing-background = screen
+#compositing-foreground = source
+#compositing-border = over
+
+[global/wm]
+margin-bottom = 4
+margin-top = 4
+
+[colors]
+background =     #dd222222
+background-alt = #dd444444
+foreground =     #dfdfdf
+foreground-alt = #5f5f5f
+primary   =      #ffbb20
+secondary =      #e60053
+actif     =      #36E013
+focused   =      #36E013
+alert     =      #aa2F343F
+work      =      #5A1A8A
+
+[bar/bspwmbar]
+width=99%
+height = 3%
+offset-y = 0.5%
+offset-x = 0.5%
+radius = 3
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 4
+padding = 1
+module-margin = 1
+enable-ipc = true
+font-0 = mononoki Nerd Font Mono:pixelsize=14:antialias=true:autohint=true
+font-1 = Noto Serif Display SemiCondensed ExtraLight Nerd Font Complete:pixelsize=14:antialias=true:autohint=true
+font-2 = DejaVu Sans Mono Nerd Font Complete Mono:pixelsize=14:antialias=true:autohint=true
+dpi-x = 0
+dpi-y = 0
+
+modules-left = bspwm
+modules-right = sound pulseaudio wlp4s0 wlp2s0 wlan0 eth0 eth1 eth2 tun0 battery temp xkeyboard date
+
+locale = fr_FR.UTF-8
+wm-restack = bspwm
+cursor-click = pointer
+cursor-scroll = ns-resize
+
+[module/sound]
+#sink = bluez_sink.2C_4D_79_B0_6B_F8.a2dp_sink
+#sink = alsa_output.pci-0000_00_1f.3.analog-stereo
+type = custom/ipc
+hook-0 = echo ipc
+hook-1 = date +%s
+hook-2 = whoami
+initial = 1
+click-left = polybar-msg -p %pid% hook demo 1
+click-right = polybar-msg -p %pid% hook demo 2
+double-click-left = polybar-msg -p %pid% hook demo 3
+format = <output>  
+format-foreground = ${colors.foreground}
+format-background = ${colors.background}
+
+; vim:ft=dosini

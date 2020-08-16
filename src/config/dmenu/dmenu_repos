@@ -1,0 +1,22 @@
+#!/bin/bash
+
+font="mononoki Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
+menu_color="#D3E351"
+menu_text_color="#F5F5F5"
+menu_bg_color="#303030"
+menu_select_bg_color="#131313"
+
+generate_cache(){
+    notify-send "generate cache"
+    find $HOME -type d -name .git \
+    | sed -e "s|\(^.*/\)\(.*\)\(/\)\(\.git\)|\2 \1\2|" > ~/.cache/repos
+
+}
+
+if ! test -f ~/.cache/repos ;then
+    generate_cache
+elif test $(find ~/.cache/repos -mmin +60) ;then
+    generate_cache
+fi
+cat ~/.cache/repos \
+    | dmenu -l 30 -p "repos :" -fn "$font" -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color -nb $menu_bg_color

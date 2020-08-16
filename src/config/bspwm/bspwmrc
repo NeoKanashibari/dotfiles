@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# TODO : Cleanup this shit
+if [[ -f $HOME/.config/layouts/pythagore.sh ]]; then
+    source $HOME/.config/layouts/pythagore.sh
+    bspc monitor HDMI-1 -d  1 2 3 4 5
+    bspc monitor DP-3 -d 6 7 8 9 10
+elif [[ -f $HOME/.config/layouts/maxwell.sh ]]; then
+    bspc monitor DisplayPort-2 -d  1 2 3 4 5 6 7 8 9 10
+else
+    bspc monitor eDP-1 -d 1 2 3 4 5 6 7 8 9 10
+    echo "layout not found"
+fi
+
+find ~/wallpapers/ -type f | shuf -n1 | xargs feh --bg-scale
+
+# TODO : Add a trop down terminal like the one i have in i3
+# st -name scratchterm &
+# bspc rule -a URxvt:scratchterm monitor=DP1 sticky=on state=floating locked=on hidden=on rectangle=1720x720+2780+27
+
+bspc config border_width 2
+bspc config window_gap   1
+bspc config click_to_focus true
+bspc config split_ratio 0.52
+
+bspc config active_border_color  \#234393
+bspc config focused_border_color \#46E385
+bspc config normal_border_color  \#111111
+
+~/.config/scripts/reloadenv

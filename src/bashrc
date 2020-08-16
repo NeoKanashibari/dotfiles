@@ -1,0 +1,35 @@
+# ~/.bashrc: executed by bash(1) for non-login shells.
+
+LANG=en_US.UTF-8
+
+ulimit -n 4096
+
+case $- in
+    *i*) ;;
+    *) return;;
+esac
+
+HISTCONTROL=ignoreboth
+HISTSIZE=1000000
+HISTFILESIZE=2000000
+shopt -s histappend
+shopt -s checkwinsize
+
+if [ -d ~/.config/bash.d ]; then
+    for fname in ~/.config/bash.d/*; do
+        source "$fname"
+    done
+fi
+
+if [ -f /etc/bash_completion ]; then
+    . /etc/bash_completion
+fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+FZF_TMUX_HEIGHT="10%"
+
+export XDG_CONFIG_HOME="$HOME/.config"
+export EDITOR="vim"
+export GIT_EDITOR="vim"
+
+[ -f ~/.config/private.bash ] && source ~/.config/private.bash
