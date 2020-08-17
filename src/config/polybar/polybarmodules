@@ -15,15 +15,15 @@ label-indicator-underline = ${colors.secondary}
 [module/xbacklight]
 type = internal/backlight
 card = intel_backlight
-enable-scroll = false
-format = <label> <ramp>
+enable-scroll = true
+format = <ramp> <label>
 ramp-0 = 🌕
 ramp-1 = 🌔
 ramp-2 = 🌓
 ramp-3 = 🌒
 ramp-4 = 🌑
 label = %percentage%%
-bar-empty-foreground = ${colors.foreground}
+format-underline = ${colors.primary}
 
 [module/date]
 type = internal/date
