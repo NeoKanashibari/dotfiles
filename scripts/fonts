@@ -1,0 +1,32 @@
+#!/bin/bash
+
+echo "Install fonts"
+fontsurl="https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Mononoki"
+fontsdir="$1/.local/share/fonts"
+[ ! -d ${fontdir} ] && echo "mkdir $fontdir" && mkdir $fontdir
+fonts=(
+"$fontsurl/Bold-Italic/complete/mononoki%20Bold%20Italic%20Nerd%20Font%20Complete%20Mono.ttf"
+"$fontsdir/mononoki_Bold_Italic_Nerd_Font_Complete_Mono.ttf"
+"$fontsurl/Bold-Italic/complete/mononoki%20Bold%20Italic%20Nerd%20Font%20Complete.ttf"
+"$fontsdir/mononoki_Bold_Italic_Nerd_Font_Complete.ttf"
+"$fontsurl/Regular/complete/mononoki-Regular%20Nerd%20Font%20Complete%20Mono.ttf"
+"$fontsdir/mononoki-Regular_Nerd_Font_Complete_Mono.ttf"
+"$fontsurl/Regular/complete/mononoki-Regular%20Nerd%20Font%20Complete.ttf"
+"$fontsdir/mononoki-Regular_Nerd_Font_Complete.ttf"
+"$fontsurl/Bold/complete/mononoki%20Bold%20Nerd%20Font%20Complete%20Mono.ttf"
+"$fontsdir/mononoki_Bold_Nerd_Font_Complete_Mono.ttf"
+"$fontsurl/Bold/complete/mononoki%20Bold%20Nerd%20Font%20Complete.ttf"
+"$fontsdir/mononoki_Bold_Nerd_Font_Complete.ttf"
+"$fontsurl/Italic/complete/mononoki%20Italic%20Nerd%20Font%20Complete.ttf"
+"$fontsdir/mononoki_Italic_Nerd_Font_Complete.ttf"
+"$fontsurl/Italic/complete/mononoki%20Italic%20Nerd%20Font%20Complete%20Mono.ttf"
+"$fontsdir/mononoki_Italic_Nerd_Font_Complete_Mono.ttf"
+)
+
+for (( i=0 ;i<${#fonts[*]} ;i=i+2 )) ; do
+    [ ! -f "${fonts[$i+1]}" ] \
+        && printf "fetch mononoki : %s\n" ${fonts[$i]} \
+        && curl --silent -fLo "${fonts[$i+1]}" --create-dirs "${fonts[$i]}"
+done
+
+exit 0

@@ -29,5 +29,7 @@
 Install config file for the current user
 
 ```console
-./install.sh
+git clone https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
+cd repos/dotfiles
+./install
 ```

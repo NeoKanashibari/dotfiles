@@ -1,0 +1,23 @@
+#!/bin/bash
+
+commands="nodejs python3 python2 toto feh bspwm sxhkd ssh vim nvim htop strace ranger git \
+          vi lsof st dmenu slock polybar firefox"
+
+echo "Check system"
+echo "host :"
+grep '^NAME=' /etc/os-release
+
+echo "missing software :"
+for cmd in $commands; do
+    if [ -z "$(command -v $cmd)" ];then
+        software_status+="* $cmd \n"
+    fi
+done
+
+if [ ! -z "$software_status" ];then
+    printf "$software_status"
+else
+    echo "no missing software"
+fi
+
+xorg_packages="xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset"

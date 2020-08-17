@@ -1,0 +1,23 @@
+#!/bin/bash
+
+case $1 in
+    "")
+        scripts/dotfiles $HOME
+        scripts/wallpapers $HOME
+        scripts/fonts $HOME
+        ;;
+    dotfiles)
+        scripts/dotfiles $HOME
+        ;;
+    wallpapers)
+        scripts/wallpapers $HOME
+        ;;
+    fonts)
+        scripts/fonts $HOME
+        ;;
+    check)
+        scripts/sanity-check $HOME
+        ;;
+    *) echo "Command not available"
+        ;;
+esac

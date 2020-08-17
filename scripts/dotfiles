@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Install dotfiles"
+
+[ ! -d $1 ] && mkdir $1
+for file in $(find src -mindepth 1) ; do
+  [[ -d $file && ! -d $1/.${file#*/} ]] \
+     && echo "mkdir -p $1/.${file#*/}" && mkdir -p $1/.${file#*/}
+  [[ -f $file && $(readlink -f $1/.${file#*/}) != $PWD/$file ]] \
+     && echo "ln -sf $PWD/$file $1/.${file#*/}" && ln -sf $PWD/$file $1/.${file#*/}
+done
+exit 0
