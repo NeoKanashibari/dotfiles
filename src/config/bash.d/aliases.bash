@@ -24,5 +24,4 @@ alias dn="date +%d-%m-%Y_%Hh%Mm%Ss"
 alias ipa="ip -br -4 addr"
 alias ipr="ip -br -4 route"
 
-# TODO: Only if nvim is installed
-alias vim="nvim"
+[ -f "$(command -v nvim)" ] && alias vim="nvim"
