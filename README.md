@@ -1,5 +1,19 @@
 # Kanshi dotfiles
 
+## Host needed packages
+### Arch Linux
+
+* man-db
+* man-pages
+* xorg-fonts-100dpi
+* xorg-server
+* xorg-xbacklight
+* xorg-xev
+* xorg-xfd
+* xorg-xinit
+* xorg-xrandr
+* xorg-xset
+
 ## Configured software
 
 1. bash

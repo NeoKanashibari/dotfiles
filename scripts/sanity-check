@@ -1,6 +1,6 @@
 #!/bin/bash
 
-commands="nodejs python3 python2 toto feh bspwm sxhkd ssh vim nvim htop strace ranger git \
+commands="nodejs python3 python2 feh bspwm sxhkd ssh vim nvim htop strace ranger git \
           vi lsof st dmenu slock polybar firefox"
 
 echo "Check system"
@@ -19,5 +19,3 @@ if [ ! -z "$software_status" ];then
 else
     echo "no missing software"
 fi
-
-xorg_packages="xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset"
