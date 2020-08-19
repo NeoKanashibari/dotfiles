@@ -1,2 +1,2 @@
 setxkbmap fr &
-/usr/sbin/bspwm
+bspwm
