@@ -49,7 +49,7 @@ label-connected = %local_ip%
 
 [module/eth1]
 type = internal/network
-interface = eno1
+interface = enp8s0u2
 interval = 3.0
 format-connected-underline = #55aa55
 format-connected-prefix = " "
