@@ -1,8 +1,9 @@
 [alias]
     st = status
     nuke = clean -fdx
-    diffcached = diff --cached
+    dc = diff --cached
     log1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    log2 = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 
 [color]
     ui = auto
