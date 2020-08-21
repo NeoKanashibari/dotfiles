@@ -1,5 +1,6 @@
 [alias]
     st = status
+    s = status --porcelain --ignore-submodules
     nuke = clean -fdx
     dc = diff --cached
     log1 = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
