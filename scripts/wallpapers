@@ -10,6 +10,10 @@ wallpaper=(
 "https://images7.alphacoders.com/852/852656.jpg" "$1/wallpapers/landscape.jpg"
 "https://images.alphacoders.com/190/190593.jpg"  "$1/wallpapers/clock2.jpg"
 "https://images.alphacoders.com/103/103011.jpg"  "$1/wallpapers/blueprint1.jpg"
+"https://get.wallhere.com/photo/1920x1080-px-digital-art-fantasy-art-landscape-long-hair-ryky-trees-wind-1314651.jpg" "$1/wallpapers/trees-wind-1.jpg"
+"https://c.wallhere.com/photos/fc/22/artwork_fantasy_art_mountains_umbrella_trees_ryky_painting-1258727.jpg!d" "$1/wallpapers/trees-wind-2.jpg"
+"https://c.wallhere.com/photos/a8/5a/digital_art_fantasy_art_architecture_building_house_artwork_painting_nature-24745.jpg!d" "$1/wallpapers/trees-wind-3.jpg"
+"https://c.wallhere.com/photos/cc/73/ryky_painting_digital_art_forest_bokeh_fantasy_art-1418399.jpg!d" "$1/wallpapers/ryky-land-1.jpg"
 )
 for (( i=0 ;i<${#wallpaper[*]} ;i=i+2 )) ; do
     [ ! -f ${wallpaper[$i+1]} ] \
