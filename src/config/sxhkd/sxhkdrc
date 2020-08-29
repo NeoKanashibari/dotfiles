@@ -28,6 +28,8 @@ super + shift + v
 	virtualbox
 super + shift + c
 	teams
+super + shift + s
+	scrot ~/$(date +%d-%m-%Y_%Hh%Mm%Ss)-screenshot.png
 super + m
 	bspc node @/ -R 90
 super + b;super + n
