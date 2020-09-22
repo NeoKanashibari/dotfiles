@@ -7,6 +7,7 @@ alias tree="tree -a -I '.git|.svn|node_modules'"
 alias ls='ls --color'
 alias ll='ls -la'
 alias la='ls -a'
+alias l='ls -l1'
 
 alias cdd='cd ~/repos/dotfiles'
 alias sbrc="source $HOME/.bashrc"
