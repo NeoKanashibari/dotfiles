@@ -3,6 +3,7 @@
 case $1 in
     "")
         scripts/dotfiles $HOME
+        scripts/files $HOME
         scripts/wallpapers $HOME
         scripts/fonts $HOME
         ;;
