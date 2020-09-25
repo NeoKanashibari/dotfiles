@@ -25,3 +25,6 @@ gar() {
 ga() {
   git commit --amend --reuse-message=HEAD
 }
+gacp(){
+  git add . ; git commit -m "${@}"; git push origin master
+}
