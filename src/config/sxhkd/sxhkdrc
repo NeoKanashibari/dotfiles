@@ -18,8 +18,6 @@ super + r
 	exec /usr/local/bin/st -f "mononoki Nerd Font Mono:pixelsize=20:antialias=true:autohint=true" ranger
 super + {_,shift + }t
 	{st,st -f "mononoki Nerd Font Mono:pixelsize=25:antialias=true:autohint=true"}
-super + shift + r
-	~/.config/scripts/reloadenv
 super + shift + a
 	slock -m "Locked at : $(date)"
 super + shift + p
