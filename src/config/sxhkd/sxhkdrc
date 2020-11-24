@@ -20,6 +20,8 @@ super + {_,shift + }t
 	{st,st -f "mononoki Nerd Font Mono:pixelsize=25:antialias=true:autohint=true"}
 super + shift + a
 	slock -m "Locked at : $(date)"
+super + shift + m
+	thunderbird
 super + shift + p
 	mypaint
 super + shift + v
