@@ -24,6 +24,8 @@ super + shift + m
 	thunderbird
 super + shift + p
 	mypaint
+super + shift + r
+	~/.config/bspwm/bspwmrc
 super + shift + v
 	virtualbox
 super + {_,shift} + c
