@@ -1,0 +1,3 @@
+[submodule "packages/teams"]
+	path = packages/teams
+	url = https://aur.archlinux.org/teams.git
