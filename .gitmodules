@@ -4,3 +4,6 @@
 [submodule "software/pureline"]
 	path = software/pureline
 	url = https://github.com/NeoKanashibari/pureline.git
+[submodule "software/st"]
+	path = software/st
+	url = https://git.suckless.org/st
