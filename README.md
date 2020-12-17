@@ -43,7 +43,7 @@
 Install config file for the current user
 
 ```console
-git clone https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
-cd repos/dotfiles
+git clone --recurse-submodules https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
+cd $HOME/repos/dotfiles
 ./install
 ```

@@ -1,3 +1,6 @@
 [submodule "packages/teams"]
 	path = packages/teams
 	url = https://aur.archlinux.org/teams.git
+[submodule "software/pureline"]
+	path = software/pureline
+	url = https://github.com/NeoKanashibari/pureline.git

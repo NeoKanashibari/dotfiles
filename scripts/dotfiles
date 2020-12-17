@@ -9,4 +9,11 @@ for file in $(find src -mindepth 1) ; do
   [[ -f $file && $(readlink -f $1/.${file#*/}) != $PWD/$file ]] \
      && echo "ln -sf $PWD/$file $1/.${file#*/}" && ln -sf $PWD/$file $1/.${file#*/}
 done
+
+if [[ ! -f "~/.config/private.bash" ]]; then
+cat > ~/.config/private.bash <<EOF
+export SOURCECONFIG="$(pwd)"
+EOF
+fi
+
 exit 0

@@ -16,6 +16,10 @@ shopt -s histappend
 shopt -s checkwinsize
 HISTTIMEFORMAT="%d%m %T "
 
+if [ -f ~/.config/private.bash ];then
+  source ~/.config/private.bash
+fi
+
 if [ -d ~/.config/bash.d ]; then
     for fname in ~/.config/bash.d/*; do
         source "$fname"
@@ -33,6 +37,3 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 
-if [ -f ~/.config/private.bash ];then
-  source ~/.config/private.bash
-fi
