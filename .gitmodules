@@ -7,3 +7,6 @@
 [submodule "software/st"]
 	path = software/st
 	url = https://git.suckless.org/st
+[submodule "software/dmenu"]
+	path = software/dmenu
+	url = https://git.suckless.org/dmenu
