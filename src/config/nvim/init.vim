@@ -2,6 +2,7 @@ syntax on
 let mapleader = " "
 set hidden
 set expandtab
+set nowrap
 set smarttab
 set shiftwidth=2
 set tabstop=2
