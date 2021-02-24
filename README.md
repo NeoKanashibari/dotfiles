@@ -47,3 +47,10 @@ git clone --recurse-submodules https://github.com/NeoKanashibari/dotfiles.git $H
 cd $HOME/repos/dotfiles
 ./install
 ```
+
+# Note
+
+## convert pdf to jpg
+```console
+pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
+```
