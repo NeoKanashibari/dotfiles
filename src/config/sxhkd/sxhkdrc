@@ -22,6 +22,8 @@ super + shift + a
 	slock -m "Locked at : $(date)"
 super + shift + m
 	thunderbird
+super + p
+	gimp
 super + shift + p
 	mypaint
 super + shift + r
@@ -36,6 +38,11 @@ super + m
 	bspc node @/ -R 90
 super + b;super + n
 	~/.config/dmenu/dmenu_bookmark
+F3
+	qtcreator
+F4
+	virtualbox
+F
 F2
 	~/repos/perso/dmenubooks/dmenubooks
 super + b;super + r
