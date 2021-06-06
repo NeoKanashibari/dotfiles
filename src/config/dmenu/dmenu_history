@@ -1,3 +1,0 @@
-history | dmenu -l 30 -c \
-    -fn "mononoki Nerd Font Mono:pixelsize=20:antialias=true:autohint=true" \
-    -sb "#D35351" -sf "#131313" -nf "#F5F5F5" -nb "#315050"

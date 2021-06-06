@@ -42,7 +42,10 @@ F3
 	qtcreator
 F4
 	virtualbox
-F2
-	~/repos/perso/dmenubooks/dmenubooks
+F1
+	~/.config/dmenu/dmenu_password
+F12
+	~/.config/dmenu/dmenu_repos
+
 super + b;super + r
 	~/.config/dmenu/dmenu_repos
