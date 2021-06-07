@@ -1,7 +1,4 @@
 #!/bin/sh
 
-echo "Install markdown files"
+dest="${1}"
 
-for file in $(find files -mindepth 1) ; do
-  echo "ln -sf $PWD/$file $1/${file#*/}" && ln -sf $PWD/$file $1/${file#*/}
-done

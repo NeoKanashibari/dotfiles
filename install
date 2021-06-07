@@ -1,23 +1,22 @@
-#!/bin/bash
+#!/bin/sh
 
-case $1 in
+case "${1}" in
     "")
-        scripts/dotfiles $HOME
-        scripts/files $HOME
-        scripts/wallpapers $HOME
-        scripts/fonts $HOME
+        scripts/dotfiles "${HOME}"
+        scripts/wallpapers "${HOME}"
+        scripts/fonts "${HOME}"
         ;;
     dotfiles)
-        scripts/dotfiles $HOME
+        scripts/dotfiles "${HOME}"
         ;;
     wallpapers)
-        scripts/wallpapers $HOME
+        scripts/wallpapers "${HOME}"
         ;;
     fonts)
-        scripts/fonts $HOME
+        scripts/fonts "${HOME}"
         ;;
     check)
-        scripts/sanity-check $HOME
+        scripts/sanity-check "${HOME}"
         ;;
     *) echo "Command not available"
         ;;

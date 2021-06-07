@@ -1,17 +1,22 @@
 #!/bin/sh
 
+dest="${1}"
+
+[ ! -d "${dest}" ] && mkdir "${dest}"
+find src -mindepth 1 -type d -print \
+  | sed "s|src/\(.*\)|$dest/.\1|g" | xargs -l mkdir -vp
+
 echo "Install dotfiles"
+find src -mindepth 1 -type f -print \
+  | sed "s|src/\(.*\)|${PWD}/src/\1 ${dest}/.\1|g" | xargs -l ln -vsf
 
-[ ! -d $1 ] && mkdir $1
-for file in $(find src -mindepth 1) ; do
-  [[ -d $file && ! -d $1/.${file#*/} ]] \
-     && echo "mkdir -p $1/.${file#*/}" && mkdir -p $1/.${file#*/}
-  [[ -f $file && $(readlink -f $1/.${file#*/}) != $PWD/$file ]] \
-     && echo "ln -sf $PWD/$file $1/.${file#*/}" && ln -sf $PWD/$file $1/.${file#*/}
-done
+echo "Install markdown files"
+find files -mindepth 1 -type f -print \
+  | sed "s|files/\(.*\)|${PWD}/files/\1 ${dest}/\1|g" | xargs -l ln -vsf
 
-if [[ ! -f "~/.config/private.bash" ]]; then
-cat > ~/.config/private.bash <<EOF
+
+if [ ! -f "$HOME/.config/private.bash" ]; then
+cat > "$HOME/.config/private.bash" <<EOF
 export SOURCECONFIG="$(pwd)"
 EOF
 fi
