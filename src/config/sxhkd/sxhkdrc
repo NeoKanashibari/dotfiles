@@ -33,7 +33,7 @@ super + shift + v
 super + {_,shift} + c
 	{discord,teams}
 super + shift + s
-	scrot ~/$(date +%d-%m-%Y_%Hh%Mm%Ss)-screenshot.png
+	scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
 super + m
 	bspc node @/ -R 90
 super + b;super + n
