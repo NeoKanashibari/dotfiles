@@ -46,11 +46,20 @@ Install config file for the current user
 git clone --recurse-submodules https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
 cd $HOME/repos/dotfiles
 ./install
+```
 # Glyph
 ## purline:
 ```sh
 echo "        §  ↓ ✚ ✔ ✘  ⚑ ⏎ ⚡ ▮ ☁   "
 ```
+
+## polybar:
+```sh
+echo "       既   直睊   "
+echo "   戮      "
+echo " פֿ"
+echo "   "
+
 ```
 
 # Note

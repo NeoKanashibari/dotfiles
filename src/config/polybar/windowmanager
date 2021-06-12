@@ -1,19 +1,35 @@
 [module/bspwm]
+# icons :   
 type = internal/bspwm
-format = <label-state>
-label-focused = %index%
-label-focused-background = ${colors.background}
-label-focused-underline= ${colors.focused}
-label-focused-padding = 1
-label-occupied = %index%
-label-occupied-padding = 1
-label-occupied-underline= ${colors.primary}
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 1
-label-empty = "%index%"
+format = <label-monitor> <label-mode> <label-state> }
+label-monitor = "%name%{"
+
+ws-icon-0 = "1;"
+ws-icon-1 = "2;"
+ws-icon-2 = "3;"
+ws-icon-3 = "4;"
+ws-icon-4 = "5;"
+ws-icon-5 = "1;"
+ws-icon-6 = "2;"
+ws-icon-7 = "3;"
+ws-icon-8 = "4;"
+ws-icon-9 = "5;"
+
+label-empty = %icon%
 label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 1
+
+label-focused = %icon%
+label-focused-foreground = ${colors.focused}
+
+label-occupied = %icon%
+label-occupied-foreground = ${colors.occupied}
+
+label-urgent = %icon%
+label-urgent-foreground = ${colors.urgent}
+
+label-separator  = .
+label-separator-foreground = ${colors.background}
+
 enable-scroll = false
 pin-workspaces = false
 

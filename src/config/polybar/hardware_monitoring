@@ -1,11 +1,13 @@
 [module/temp]
 type = internal/temperature
 thermal-zone = 0
-warn-temperature = 60
-format = 﨎 <label>
-format-underline = ${colors.primary}
-format-warn = 﨎 <label-warn>
-format-warn-underline = ${colors.alert}
+warn-temperature = 70
+format = 﨎
+format-foreground = #12E212
+#format-underline = ${colors.primary}
+format-warn = 﨎
+format-warn-foreground = #E25212
+#format-warn-underline = ${colors.alert}
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.alert}

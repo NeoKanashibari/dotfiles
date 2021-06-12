@@ -12,8 +12,9 @@ label-song-ellipsis = true
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = false
-format-volume = <bar-volume>
-label-muted = "    muted    "
+format-volume =  <bar-volume>
+format-muted =  <bar-volume>
+label-muted = <bar-volume>
 label-muted-foreground = #DDDDDD
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55

@@ -17,16 +17,19 @@ margin-bottom = 4
 margin-top = 4
 
 [colors]
-background =     #dd222222
+background     = #dd222222
 background-alt = #dd444444
-foreground =     #dfdfdf
+foreground     = #dfdfdf
 foreground-alt = #5f5f5f
-primary   =      #ffbb20
-secondary =      #e60053
-actif     =      #36E013
-focused   =      #36E013
-alert     =      #aa2F343F
-work      =      #5A1A8A
+primary        = #ffbb20
+secondary      = #e60053
+actif          = #36E013
+focused        = #129012
+occupied       = #FF9012
+dimmed         = #FFFFFF
+urgent         = #FF1111
+alert          = #aa2F343F
+work           = #5A1A8A
 
 [bar/bspwmbar]
 width=99%
@@ -36,25 +39,23 @@ offset-x = 0.5%
 radius = 3
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 4
+line-size = 2
 padding = 1
 module-margin = 1
 enable-ipc = true
-font-0 = mononoki Nerd Font Mono:pixelsize=14:antialias=true:autohint=true
-font-1 = Noto Serif Display SemiCondensed ExtraLight Nerd Font Complete:pixelsize=14:antialias=true:autohint=true
-font-2 = DejaVu Sans Mono Nerd Font Complete Mono:pixelsize=14:antialias=true:autohint=true
+font-0 = mononoki Nerd Font Mono:pixelsize=16:antialias=true:autohint=true
 dpi-x = 0
 dpi-y = 0
 
 modules-left = bspwm
-modules-right = pulseaudio wlp4s0 wlp2s0 wlan0 eth0 eth1 eth2 tun0 battery temp xbacklight xkeyboard date
+modules-right = pulseaudio wired-net wireless-net vpn battery temp xkeyboard date
 
 locale = fr_FR.UTF-8
 wm-restack = bspwm
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-[module/sound]
+[module/testfont]
 #sink = bluez_sink.2C_4D_79_B0_6B_F8.a2dp_sink
 #sink = alsa_output.pci-0000_00_1f.3.analog-stereo
 type = custom/ipc
@@ -65,32 +66,32 @@ initial = 1
 click-left = polybar-msg -p %pid% hook demo 1
 click-right = polybar-msg -p %pid% hook demo 2
 double-click-left = polybar-msg -p %pid% hook demo 3
-format = <output>  
-format-foreground = ${colors.foreground}
+format =        既   直睊       戮        פֿ
+
+format-foreground = #96E083
+#${colors.foreground}
 format-background = ${colors.background}
 
 [module/menu-apps]
 type = custom/menu
 
-menu-0-0 = Browsers
-menu-0-0-exec = #menu-apps.open.1
-menu-0-1 = Multimedia
-menu-0-1-exec = #menu-apps.open.2
-
-menu-1-0 = 
-menu-1-0-exec = firefox
-menu-1-1 = 
-menu-1-1-exec = st
+menu-0-0 = 
+menu-0-0-exec = firefox
+menu-0-1 =  
+menu-0-1-exec = st
+menu-0-2 = 
+menu-0-2-exec = echo
+menu-0-3 = 既
+menu-0-3-exec = echo
 
 menu-2-0 = Gimp
 menu-2-0-exec = gimp
 menu-2-1 = Scrot
 menu-2-1-exec = scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
 
-label-open = Apps
+label-open = 
 label-close = x
 
-; Optional item separator
-; Default: none
 label-separator = |
+
 ; vim:ft=dosini
