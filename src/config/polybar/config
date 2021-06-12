@@ -47,7 +47,7 @@ dpi-x = 0
 dpi-y = 0
 
 modules-left = bspwm
-modules-right = sound pulseaudio wlp4s0 wlp2s0 wlan0 eth0 eth1 eth2 tun0 battery temp xbacklight xkeyboard date
+modules-right = pulseaudio wlp4s0 wlp2s0 wlan0 eth0 eth1 eth2 tun0 battery temp xbacklight xkeyboard date
 
 locale = fr_FR.UTF-8
 wm-restack = bspwm
