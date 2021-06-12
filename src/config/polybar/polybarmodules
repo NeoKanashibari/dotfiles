@@ -37,20 +37,30 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = ${colors.primary}
 
 [module/battery]
+# icons : 
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 96
-format-charging = ﮣ <label-charging>
+format-charging =  <label-charging>
 format-charging-underline = ${colors.primary}
 format-discharging = ﮤ <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
-format-full-prefix = " "
+format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground}
 format-full-underline = ${self.format-charging-underline}
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
 ramp-capacity-foreground = ${colors.foreground}
 animation-charging-0 = 
 animation-charging-1 = 
