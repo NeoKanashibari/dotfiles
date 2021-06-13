@@ -69,3 +69,4 @@ pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 # Ref
 
 - [bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
+- [ssh agent](https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login)
