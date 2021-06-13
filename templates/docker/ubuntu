@@ -1,0 +1,19 @@
+FROM ubuntu
+
+RUN apt-get update && apt apt-get upgrade
+RUN apt-get install -y build-essential 
+RUN apt-get install -y autoconf 
+RUN apt-get install -y git 
+RUN apt-get install -y autopoint 
+RUN apt-get install -y texinfo 
+RUN apt-get install -y bison 
+RUN apt-get install -y gettext 
+RUN apt-get install -y rsync 
+RUN apt-get install -y gperf 
+RUN apt-get install -y wget
+
+RUN useradd -ms /bin/bash builder
+USER builder
+WORKDIR /home/builder
+
+CMD ["/bin/bash"]
