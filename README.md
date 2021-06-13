@@ -65,3 +65,7 @@ echo "   �
 ```sh
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
+
+# Ref
+
+- [bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
