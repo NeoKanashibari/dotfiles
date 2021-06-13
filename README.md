@@ -1,18 +1,12 @@
-# Kanshi dotfiles
+# Dotfiles
 
 ## Host needed packages
 ### Arch Linux
 
-* man-db
-* man-pages
-* xorg-fonts-100dpi
-* xorg-server
-* xorg-xbacklight
-* xorg-xev
-* xorg-xfd
-* xorg-xinit
-* xorg-xrandr
-* xorg-xset
+```sh
+pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight \
+xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset
+```
 
 ## Configured software
 
@@ -22,7 +16,8 @@
 1. nvim
 1. pureline
 1. sxhkd
-1. vim
+1. vim/neovim
+1. gnupg
 
 ## Bookmarks
 
@@ -40,20 +35,22 @@
 
 ## Quickstart
 
-Install config file for the current user
-
-```console
+```sh
 git clone --recurse-submodules https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
 cd $HOME/repos/dotfiles
 ./install
 ```
+
 # Glyph
-## purline:
+
+## purline
+
 ```sh
 echo "        §  ↓ ✚ ✔ ✘  ⚑ ⏎ ⚡ ▮ ☁   "
 ```
 
-## polybar:
+## polybar
+
 ```sh
 echo "       既   直睊   "
 echo "   戮      "
@@ -62,9 +59,9 @@ echo "   �
 
 ```
 
-# Note
+# Notes
 
 ## convert pdf to jpg
-```console
+```sh
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
