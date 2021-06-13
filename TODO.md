@@ -1,8 +1,6 @@
 # TODO's
 
-1. [v] check at bash time if this repo is clean
-1. [v] fix jumping to workspace 1 when move windows to workspace X
-1. [ ] Add pass software for key management
-1. [ ] Add and custo xlock software
-1. [ ] Add and custo dmenu software
-1. [ ] Add and custo st software
+1. [ ] Install perl dependencies (system or user wide ?)
+1. [ ] Fix workspace management (problem when moving with number with 2 monitor)
+1. [~] Add pass software for key management (with ligne 586 tr fixed) ?
+1. [ ] Add xlock software
