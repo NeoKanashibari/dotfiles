@@ -6,4 +6,4 @@
 [ -f "~/.ssh/id_rsa" ] && ssh-add ~/.ssh/id_rsa
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-[[ -z $DISPLAY && $(tty) == "/dev/tty1" ]] && startx
+[[ -z $DISPLAY && $(tty) == "/dev/tty1" ]] && startx || true
