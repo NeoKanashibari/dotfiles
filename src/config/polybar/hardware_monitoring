@@ -1,24 +1,40 @@
 [module/temp]
 type = internal/temperature
 thermal-zone = 0
+base-temperature = 40
 warn-temperature = 70
-format = 﨎
-format-foreground = #12E212
-#format-underline = ${colors.primary}
-format-warn = 﨎
-format-warn-foreground = #E25212
-#format-warn-underline = ${colors.alert}
+format = <ramp>
 label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.alert}
+ramp-0 = ""
+ramp-0-foreground = ${colors.ok}
+ramp-1 = ""
+ramp-1-foreground = ${colors.warn}
+ramp-2 = ""
+ramp-2-foreground = ${colors.alert}
 
 [module/cpu]
 type = internal/cpu
-interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground}
-format-underline = ${colors.primary}
-label = cpu:%percentage:2%%
+interval = 1
+format = <ramp-coreload>
+label = 
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ﬙
+ramp-coreload-0-foreground = ${colors.ok}
+ramp-coreload-1 = ﬙
+ramp-coreload-1-foreground = ${colors.step1}
+ramp-coreload-2 = ﬙
+ramp-coreload-2-foreground = ${colors.step2}
+ramp-coreload-3 = ﬙
+ramp-coreload-3-foreground = ${colors.step3}
+ramp-coreload-4 = ﬙
+ramp-coreload-4-foreground = ${colors.step4}
+ramp-coreload-5 = ﬙
+ramp-coreload-5-foreground = ${colors.step5}
+ramp-coreload-6 = ﬙
+ramp-coreload-6-foreground = ${colors.step6}
+ramp-coreload-7 = ﬙
+ramp-coreload-7-foreground = ${colors.alert}
+
 
 [module/memory]
 type = internal/memory
@@ -35,5 +51,49 @@ mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
 label-unmounted-foreground = ${colors.foreground}
 label-mounted-underline = ${colors.primary}
+
+[module/battery]
+# icons : 
+type = internal/battery
+battery = BAT0
+adapter = AC
+full-at = 96
+
+format-charging =  <label-charging>
+format-charging-foreground= #362083
+# ${colors.primary}
+format-charging-underline = ${colors.primary}
+
+format-discharging = ﮤ <animation-discharging> <label-discharging>
+format-discharging-foreground = #869012
+#format-discharging-underline = ${self.format-charging-underline}
+format-full = ""
+;
+format-full-foreground = #36E012
+#format-full-prefix = " "
+#format-full-underline = ${self.format-charging-underline}
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-5 = 
+ramp-capacity-6 = 
+ramp-capacity-7 = 
+ramp-capacity-8 = 
+ramp-capacity-9 = 
+
+ramp-capacity-foreground = ${colors.foreground}
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-foreground = ${colors.foreground}
+animation-charging-framerate = 750
+animation-discharging-0 = 
+animation-discharging-1 = 
+animation-discharging-2 = 
+animation-discharging-foreground = ${colors.foreground}
+animation-discharging-framerate = 750
+
 
 ; vim:ft=dosini

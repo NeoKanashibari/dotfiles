@@ -7,10 +7,6 @@ include-file = ~/.config/polybar/windowmanager
 
 [settings]
 screenchange-reload = true
-#compositing-background = xor
-#compositing-background = screen
-#compositing-foreground = source
-#compositing-border = over
 
 [global/wm]
 margin-bottom = 4
@@ -28,27 +24,42 @@ focused        = #129012
 occupied       = #FF9012
 dimmed         = #FFFFFF
 urgent         = #FF1111
-alert          = #aa2F343F
 work           = #5A1A8A
 
+alert  = #FF0000
+step7  = #FF9000
+step6  = #FFD000
+step5  = #FFF000
+warn   = #FFE000
+step4  = #E0FF00
+step3  = #C0FF00
+step2  = #90FF00
+step1  = #20FF00
+ok     = #10FF00
+
 [bar/bspwmbar]
-width=99%
-height = 3%
-offset-y = 0.5%
-offset-x = 0.5%
-radius = 3
+width=100%:-10
+height = 4%
+offset-y = 0.3%
+offset-x = 0.2%
+bottom = false
+line-size = 12
+line-color = #FFFFFF
+
+monitor-exact = true
 background = ${colors.background}
 foreground = ${colors.foreground}
-line-size = 2
 padding = 1
+separator = |
 module-margin = 1
 enable-ipc = true
-font-0 = mononoki Nerd Font Mono:pixelsize=16:antialias=true:autohint=true
-dpi-x = 0
-dpi-y = 0
+font-0 = mononoki Nerd Font Mono:pixelsize=14:antialias=true:autohint=true;2
+font-2 = DejaVu Sans Mono Nerd Font Complete Mono:pixelsize=14:antialias=true:autohint=true;4
+dpi-x = 120
+dpi-y = 120
 
 modules-left = bspwm
-modules-right = pulseaudio wired-net wireless-net vpn battery temp xkeyboard date
+modules-right = pulseaudio wired-net wireless-net vpn battery cpu temp backlight time
 
 locale = fr_FR.UTF-8
 wm-restack = bspwm
@@ -66,10 +77,9 @@ initial = 1
 click-left = polybar-msg -p %pid% hook demo 1
 click-right = polybar-msg -p %pid% hook demo 2
 double-click-left = polybar-msg -p %pid% hook demo 3
-format =        既   直睊       戮        פֿ
+format = שׂ שּׁ        既   直睊       戮        פֿ
 
 format-foreground = #96E083
-#${colors.foreground}
 format-background = ${colors.background}
 
 [module/menu-apps]
