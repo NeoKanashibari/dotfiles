@@ -20,7 +20,7 @@ alias vbrc="vim $HOME/.bashrc \
 alias vvrc="vim $HOME/.vimrc"
 alias vconf="vim $HOME/.config/sxhkd/sxhkdrc $HOME/.config/bspwm/bspwmrc $HOME/.config/polybar/config $HOME/.vimrc $HOME/.config/scripts/*"
 
-alias dn="date +%d-%m-%Y_%Hh%Mm%Ss"
+alias dn="date +%Y%m%d-%s"
 # IP
 alias ipa="ip -br -4 addr"
 alias ipr="ip -br -4 route"
