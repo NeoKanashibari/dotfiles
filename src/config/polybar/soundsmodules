@@ -12,55 +12,52 @@ label-song-ellipsis = true
 [module/pulseaudio]
 type = internal/pulseaudio
 use-ui-max = false
+
 format-volume =  <bar-volume>
-format-muted =  <bar-volume>
-label-muted = <bar-volume>
-label-muted-foreground = #DDDDDD
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #f5a70a
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = true
+format-muted =  <label-muted>
+label-muted = |===========
+label-muted-foreground = ${colors.foreground-alt}
+bar-volume-width = 12
+bar-volume-foreground-0 = ${colors.step1}
+bar-volume-foreground-1 = ${colors.step2}
+bar-volume-foreground-2 = ${colors.step3}
+bar-volume-foreground-3 = ${colors.step4}
+bar-volume-foreground-4 = ${colors.step5}
+bar-volume-foreground-5 = ${colors.step6}
+bar-volume-foreground-6 = ${colors.step7}
+bar-volume-foreground-7 = ${colors.alert}
+
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
 bar-volume-fill = =
-bar-volume-fill-font = 2
 bar-volume-empty = =
-bar-volume-empty-font = 2
+
 bar-volume-empty-foreground = ${colors.foreground-alt}
-; Only applies if <ramp-volume> is used
-ramp-volume-0 = 🔈
-ramp-volume-1 = 🔉
-ramp-volume-2 = 🔊
+bar-volume-muted-foreground = ${colors.foreground-alt}
+# TODO: toggle pavucontrol
 click-right = pavucontrol &
 
 [module/alsa]
 type = internal/alsa
-format-volume = <label-volume> <bar-volume>
-label-volume = VOL
-label-volume-foreground = ${root.foreground}
-format-muted-prefix = " "
-format-muted-foreground = ${colors.foreground}
-label-muted = sound muted
-bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
-bar-volume-gradient = false
+
+format-volume =  <bar-volume>
+format-muted =  <label-muted>
+label-muted = |===========
+label-muted-foreground = ${colors.foreground-alt}
+bar-volume-width = 12
+bar-volume-foreground-0 = ${colors.step1}
+bar-volume-foreground-1 = ${colors.step2}
+bar-volume-foreground-2 = ${colors.step3}
+bar-volume-foreground-3 = ${colors.step4}
+bar-volume-foreground-4 = ${colors.step5}
+bar-volume-foreground-5 = ${colors.step6}
+bar-volume-foreground-6 = ${colors.step7}
+bar-volume-foreground-7 = ${colors.alert}
+
 bar-volume-indicator = |
-bar-volume-indicator-font = 2
 bar-volume-fill = =
-bar-volume-fill-font = 2
-bar-volume-empty = ─
-bar-volume-empty-font = 2
-bar-volume-empty-foreground = ${colors.foreground}
+bar-volume-empty = =
+
+bar-volume-empty-foreground = ${colors.foreground-alt}
+bar-volume-muted-foreground = ${colors.foreground-alt}
 
 ; vim:ft=dosini
