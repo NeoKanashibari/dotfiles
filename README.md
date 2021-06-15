@@ -1,6 +1,7 @@
 # Dotfiles
 
 ## Host needed packages
+
 ### Arch Linux
 
 ```sh
@@ -41,15 +42,15 @@ cd $HOME/repos/dotfiles
 ./install
 ```
 
-# Glyph
+## Glyph
 
-## purline
+### purline
 
 ```sh
 echo "        §  ↓ ✚ ✔ ✘  ⚑ ⏎ ⚡ ▮ ☁   "
 ```
 
-## polybar
+### polybar
 
 ```sh
 echo "       既   直睊   "
@@ -59,14 +60,16 @@ echo "   �
 
 ```
 
-# Notes
+## Notes
 
-## convert pdf to jpg
+### convert pdf to jpg
+
 ```sh
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
 
-# Ref
+## Refs
 
-- [bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
-- [ssh agent](https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login)
+[bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
+[ssh agent](https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login)
+[markdown linter](https://github.com/markdownlint/markdownlint)

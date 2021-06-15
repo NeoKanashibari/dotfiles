@@ -1,4 +1,4 @@
-## Install and path software from source
+# Install and path software from source
 
 ## dmenu
 
