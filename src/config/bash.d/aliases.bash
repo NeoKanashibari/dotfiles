@@ -21,6 +21,8 @@ alias vvrc="vim $HOME/.vimrc"
 alias vconf="vim $HOME/.config/sxhkd/sxhkdrc $HOME/.config/bspwm/bspwmrc $HOME/.config/polybar/config $HOME/.vimrc $HOME/.config/scripts/*"
 
 alias dn="date +%Y%m%d-%s"
+alias today="mkdir $(date +%Y%m%d-%H.%M.%S)"
+
 # IP
 alias ipa="ip -br -4 addr"
 alias ipr="ip -br -4 route"
