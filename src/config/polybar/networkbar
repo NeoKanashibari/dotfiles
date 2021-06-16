@@ -1,21 +1,6 @@
-[module/wired-net]
+[module/wireless-base]
 type= internal/network
-interface = enp0s31f6
 label-connected-font = 2
-label-disconnected-font = 2
-format-connected = <label-connected>
-format-packetloss = <label-connected>
-format-packetloss-foreground = ${colors.urgent}
-
-format-disconnected = <label-disconnected>
-label-disconnected = %ifname%
-label-disconnected-foreground = ${colors.foreground-alt}
-label-connected = %ifname% <%local_ip%>
-
-[module/wireless-net]
-type = internal/network
-label-connected-font = 2
-interface = wlan0
 interval = 15.0
 format-connected = <ramp-signal> <label-connected>
 format-disconnected = <label-disconnected>
@@ -37,6 +22,24 @@ ramp-signal-4 = ﳊ
 ramp-signal-4-foreground = ${colors.step2}
 ramp-signal-5 = ﳊ
 ramp-signal-5-foreground = ${colors.step1}
+
+[module/wireless-net]
+inherit = module/wireless-base
+interface-type = wireless
+
+[module/wired-net]
+type= internal/network
+interface-type = wired
+label-connected-font = 2
+label-disconnected-font = 2
+format-connected = <label-connected>
+format-packetloss = <label-connected>
+format-packetloss-foreground = ${colors.urgent}
+
+format-disconnected = <label-disconnected>
+label-disconnected = %ifname%
+label-disconnected-foreground = ${colors.foreground-alt}
+label-connected = %ifname% <%local_ip%>
 
 [module/vpn]
 type = internal/network
