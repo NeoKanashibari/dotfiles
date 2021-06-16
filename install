@@ -1,22 +1,25 @@
 #!/bin/sh
 
-case "${1}" in
-    "")
-        scripts/dotfiles "${HOME}"
-        scripts/wallpapers "${HOME}"
-        scripts/fonts "${HOME}"
+dest=${1-$HOME}
+subcommand=${2-dotfiles}
+
+case "${subcommand}" in
+    all)
+        scripts/dotfiles "${dest}"
+        scripts/wallpapers "${dest}"
+        scripts/fonts "${dest}"
         ;;
     dotfiles)
-        scripts/dotfiles "${HOME}"
+        scripts/dotfiles "${dest}"
         ;;
     wallpapers)
-        scripts/wallpapers "${HOME}"
+        scripts/wallpapers "${dest}"
         ;;
     fonts)
-        scripts/fonts "${HOME}"
+        scripts/fonts "${dest}"
         ;;
     check)
-        scripts/sanity-check "${HOME}"
+        scripts/sanity-check "${dest}"
         ;;
     *) echo "Command not available"
         ;;

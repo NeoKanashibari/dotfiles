@@ -2,7 +2,8 @@
 
 echo "Install wallpapers"
 
-[ ! -d $1/wallpapers ] && echo "mkdir $1/wallpapers" && mkdir $1/wallpapers
+[ ! -d "$1/wallpapers" ] && mkdir -p $1/wallpapers
+
 wallpaper=(
 "https://images8.alphacoders.com/912/912945.jpg" "$1/wallpapers/flying_city.jpg"
 "https://images3.alphacoders.com/236/236077.jpg" "$1/wallpapers/gooddesk.jpg"
@@ -15,9 +16,11 @@ wallpaper=(
 "https://c.wallhere.com/photos/a8/5a/digital_art_fantasy_art_architecture_building_house_artwork_painting_nature-24745.jpg!d" "$1/wallpapers/trees-wind-3.jpg"
 "https://c.wallhere.com/photos/cc/73/ryky_painting_digital_art_forest_bokeh_fantasy_art-1418399.jpg!d" "$1/wallpapers/ryky-land-1.jpg"
 )
+
 for (( i=0 ;i<${#wallpaper[*]} ;i=i+2 )) ; do
     [ ! -f ${wallpaper[$i+1]} ] \
       && printf "fetch %-15s : %s\n" $(basename ${wallpaper[$i+1]}) ${wallpaper[$i]} \
       && curl --silent -fLo ${wallpaper[$i+1]} --create-dirs ${wallpaper[$i]}
 done
+
 exit 0
