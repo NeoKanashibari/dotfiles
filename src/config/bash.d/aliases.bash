@@ -9,7 +9,10 @@ alias ll='ls -la'
 alias la='ls -a'
 alias l='ls -l1'
 
-alias cdd='cd ~/repos/dotfiles'
+sourcedotfile="$(dirname $(readlink -f ~/.bashrc))"
+DOTFILES=${sourcedotfile/src}
+alias cdd="cd $DOTFILES"
+
 alias sbrc="source $HOME/.bashrc"
 alias vbrc="vim $HOME/.bashrc \
     $HOME/.config/bash.d/aliases.bash \
