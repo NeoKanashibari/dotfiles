@@ -41,7 +41,6 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.primary}
 label = %percentage_used%%
 
 [module/filesystem]
@@ -50,28 +49,22 @@ interval = 25
 mount-0 = /
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %free%
 label-unmounted-foreground = ${colors.foreground}
-label-mounted-underline = ${colors.primary}
 
 [module/battery]
 # icons : 
+#         
 type = internal/battery
 battery = BAT0
 adapter = AC
 full-at = 96
 
 format-charging =  <label-charging>
-format-charging-foreground= #362083
-# ${colors.primary}
-format-charging-underline = ${colors.primary}
-
 format-discharging = ﮤ <animation-discharging> <label-discharging>
-format-discharging-foreground = #869012
-#format-discharging-underline = ${self.format-charging-underline}
 format-full = ""
-;
+format-charging-foreground= #362083
+format-discharging-foreground = #869012
 format-full-foreground = #36E012
-#format-full-prefix = " "
-#format-full-underline = ${self.format-charging-underline}
+
 ramp-capacity-0 = 
 ramp-capacity-1 = 
 ramp-capacity-2 = 
@@ -82,18 +75,18 @@ ramp-capacity-6 = 
 ramp-capacity-7 = 
 ramp-capacity-8 = 
 ramp-capacity-9 = 
-
 ramp-capacity-foreground = ${colors.foreground}
+
 animation-charging-0 = 
 animation-charging-1 = 
 animation-charging-2 = 
 animation-charging-foreground = ${colors.foreground}
 animation-charging-framerate = 750
+
 animation-discharging-0 = 
 animation-discharging-1 = 
 animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground}
 animation-discharging-framerate = 750
-
 
 ; vim:ft=dosini
