@@ -38,20 +38,11 @@ super + m
 	bspc node @/ -R 90
 super + b;super + n
 	~/.config/dmenu/dmenu_bookmark
+
+# This F1 display help for some application
+# maybe change this to another shortcut
 F1
 	~/.config/dmenu/dmenu_password
-
-F5
-	qtcreator
-F6
-	virtualbox
-
-F11
-	id=$(cat /tmp/scratchid);\
-  bspc node $id --flag hidden;bspc node -f $id
-
-F12
-	~/.config/dmenu/dmenu_repos
 
 super + b;super + r
 	~/.config/dmenu/dmenu_repos
