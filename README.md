@@ -5,15 +5,10 @@
 ### Arch Linux
 
 ```sh
-pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight \
-xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset
-```
-## Extra packages
-
-```sh
-pacman -Syu delta bspwm ranger firefox vim zathura zathura-djvu \
-sxiv rsync nodejs firefox htop nmap lsof openfortivpn openssh subversion git \
-xclip tmux squashfs-tools strace
+pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight  \
+xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm \
+ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof \
+openfortivpn openssh subversion git xclip tmux squashfs-tools strace
 ```
 
 ## Configured software
@@ -27,14 +22,6 @@ xclip tmux squashfs-tools strace
 1. vim/neovim
 1. gnupg
 
-## Bookmarks
-
-* dualscreen
-* general
-* github
-* grub
-* penttest
-
 ## Other (WIP)
 
 * linuxcmd
@@ -46,7 +33,7 @@ xclip tmux squashfs-tools strace
 ```sh
 git clone --recurse-submodules https://github.com/NeoKanashibari/dotfiles.git $HOME/repos/dotfiles
 cd $HOME/repos/dotfiles
-./install
+./install [homedir] [all|dotfiles|wallpaper|font|check]
 ```
 
 ## Glyph
