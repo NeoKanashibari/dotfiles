@@ -4,6 +4,7 @@ include-file = ~/.config/polybar/hardware_monitoring
 include-file = ~/.config/polybar/soundsmodules
 include-file = ~/.config/polybar/networkbar
 include-file = ~/.config/polybar/windowmanager
+include-file = ~/.config/polybar/vpnmodule
 
 [settings]
 screenchange-reload = true

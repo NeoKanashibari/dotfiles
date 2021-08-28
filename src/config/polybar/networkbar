@@ -41,16 +41,4 @@ label-disconnected = %ifname%
 label-disconnected-foreground = ${colors.foreground-alt}
 label-connected = %ifname% <%local_ip%>
 
-[module/vpn]
-type = internal/network
-unknown-as-up = true
-interface = tun0
-interval = 3.0
-format-disconnected = <label-disconnected>
-label-disconnected = %ifname%
-
-format-connected = <label-connected>
-label-connected = %local_ip%
-format-connected-prefix-foreground = ${colors.foreground}
-
 ; vim:ft=dosini

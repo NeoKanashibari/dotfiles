@@ -1,0 +1,36 @@
+#!/bin/bash
+VPNIP=$(ip addr | grep ppp0$ | awk '{print $2}')
+
+report(){
+    # TODO: Find an icon for vpn network
+    if [ ! -z "$VPNIP" ];then
+        echo "vpnicon on"
+    else
+        echo "vpnicon off"
+    fi
+}
+
+menu(){
+    font="mononoki Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
+    menu_color="#73D351"
+    menu_text_color="#F5F5F5"
+    menu_bg_color="#505050"
+    menu_select_bg_color="#F3F3F3"
+    #TODO: machine selector, should be a separate module
+    # This should open a terminal on the selected machine
+    SELECT=$(echo -e "machine1\nmachine2\nmachine3\n" | \
+        dmenu -l 30 -p "machines:" -fn "$font" \
+        -sb $menu_color -sf $menu_select_bg_color \
+        -nf $menu_text_color -nb $menu_bg_color)
+}
+
+toggle_connection(){
+    #TODO: connect/disconect on click
+    echo "vpn:"
+}
+
+case "$1" in
+	--toggle-connection) toggle_connection ;;
+	--menu) menu ;;
+	*) report ;;
+esac
