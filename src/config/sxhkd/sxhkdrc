@@ -10,39 +10,32 @@ super + shift + {ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,und
 	id=$(bspc query --nodes --node); bspc node --to-desktop {1-9,10}; bspc desktop --focus next; bspc node --focus ${id}
 super + {_,shift + }{h,j,k,l}
 	bspc node -{f,s} {west,south,north,east}
+
 super + a
 	bspc node -c
 super + f
 	{firefox}
-super + r
-	exec /usr/local/bin/st -f "mononoki Nerd Font Mono:pixelsize=20:antialias=true:autohint=true" ranger
 super + {_,shift + }t
-	{st -f "mononoki Nerd Font Mono:pixelsize=25:antialias=true:autohint=true",st}
+	{st -f "mononoki Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",st}
 super + shift + a
 	slock -m "Locked at : $(date)"
 super + shift + m
 	thunderbird
-super + p
-	gimp
-super + shift + p
-	mypaint
+super + {_,shift} + c
+	{discord,teams}
+super + {_,shift + }p
+	{gimp, mypaint}
 super + shift + r
 	~/.config/bspwm/bspwmrc
 super + shift + v
 	virtualbox
-super + {_,shift} + c
-	{discord,teams}
 super + shift + s
 	scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/shots/'
 super + m
 	bspc node @/ -R 90
-super + b;super + n
-	~/.config/dmenu/dmenu_bookmark
-
-# This F1 display help for some application
-# maybe change this to another shortcut
-F1
+super + d;super + p
 	~/.config/dmenu/dmenu_password
-
-super + b;super + r
+super + d;super + r
 	~/.config/dmenu/dmenu_repos
+super + d;super + b
+	~/.config/dmenu/dmenu_bookmark
