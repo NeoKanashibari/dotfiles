@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 font="mononoki Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
-menu_color="#D35351"
+menu_color="#A353E1"
 menu_text_color="#F5F5F5"
 menu_bg_color="#505050"
 menu_select_bg_color="#F3F3F3"
-browser="vivaldi-stable"
+browser="firefox"
 notify-send "editor: $EDITOR"
 
 cat ~/.config/bookmarks/* \
