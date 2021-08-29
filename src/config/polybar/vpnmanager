@@ -2,11 +2,10 @@
 VPNIP=$(ip addr | grep ppp0$ | awk '{print $2}')
 
 report(){
-    # TODO: Find an icon for vpn network
     if [ ! -z "$VPNIP" ];then
-        echo "vpnicon on"
+        echo "聯 $VPNIP"
     else
-        echo "vpnicon off"
+        echo "輦"
     fi
 }
 
