@@ -16,6 +16,10 @@ shopt -s histappend
 shopt -s checkwinsize
 HISTTIMEFORMAT="%d%m %T "
 
+if [ -f ~/.ssh/agent-environment ];then
+  source ~/.ssh/agent-environment
+fi
+
 if [ -f ~/.config/private.bash ];then
   source ~/.config/private.bash
 fi
