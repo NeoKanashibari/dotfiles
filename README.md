@@ -28,6 +28,15 @@ openfortivpn openssh subversion git xclip tmux squashfs-tools strace
 * bookmarks
 * dmenu
 
+## Docker
+
+```sh
+sudo pacman -S docker docker-compose
+sudo usermod -a -G docker $USER
+sudo systemctl enable docker.service
+reboot
+```
+
 ## Quickstart
 
 ```sh
