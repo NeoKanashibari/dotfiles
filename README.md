@@ -50,6 +50,8 @@ cd $HOME/repos/dotfiles
 ### purline
 
 ```sh
+╔
+╚
 echo "        §  ↓ ✚ ✔ ✘  ⚑ ⏎ ⚡ ▮ ☁   "
 ```
 
