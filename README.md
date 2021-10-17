@@ -74,6 +74,23 @@ echo "聯輦"
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
 
+## Introduce wayland support
+
+```sh
+sudo pacman -S grim slurp # screenshot        \
+               alacritty  # terminal emulator \
+               sway       # window manager
+```
+
+### dmenu: TODO: implement center/lines ?
+
+```sh
+git clone https://github.com/nyyManni/dmenu-wayland.git
+mkdir build
+meson build
+sudo ninja -C build install
+```
+
 ## Refs
 
 [bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
