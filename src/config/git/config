@@ -8,7 +8,7 @@
     l = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit
     ls = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit origin/master..HEAD
     ls2 = log --branches --not --remotes
-    ll = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit --all
+    ll = log --color --graph --pretty=format:'%Cgreen%h%Creset - %s %C(yellow)%d%Creset' --abbrev-commit --all
     last = log -1 --name-status
 [color]
     ui = auto
