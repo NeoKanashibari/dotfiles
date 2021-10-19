@@ -7,7 +7,6 @@ echo "Install wallpapers"
 wallpaper=(
 "https://images8.alphacoders.com/912/912945.jpg" "$1/wallpapers/flying_city.jpg"
 "https://images3.alphacoders.com/236/236077.jpg" "$1/wallpapers/gooddesk.jpg"
-"https://images4.alphacoders.com/199/199576.jpg" "$1/wallpapers/time.jpg"
 "https://images7.alphacoders.com/852/852656.jpg" "$1/wallpapers/landscape.jpg"
 "https://images.alphacoders.com/190/190593.jpg"  "$1/wallpapers/clock2.jpg"
 "https://images.alphacoders.com/103/103011.jpg"  "$1/wallpapers/blueprint1.jpg"
