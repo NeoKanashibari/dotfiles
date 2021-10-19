@@ -1,7 +1,7 @@
 # ~/.bashrc: executed by bash(1) for non-login shells.
 
 LANG=en_US.UTF-8
-
+#set -x
 ulimit -n 4096
 
 case $- in
@@ -33,6 +33,8 @@ fi
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
+
+export GRIM_DEFAULT_DIR=$HOME/shots
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 FZF_TMUX_HEIGHT="10%"
