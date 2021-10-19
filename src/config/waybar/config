@@ -2,6 +2,12 @@
     "height": 30,
     "modules-left": ["sway/workspaces" ],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "keyboard-state", "sway/language", "battery", "clock"],
+
+    "sway/workspaces": {
+        "disable-scroll": true,
+        "all-outputs": true
+    },
+
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -119,6 +125,6 @@
             "default": "🎜"
         },
         "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" 
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null"
     }
 }
