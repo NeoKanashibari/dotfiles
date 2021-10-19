@@ -6,7 +6,13 @@ menu_bg_color="#505050"
 menu_select_bg_color="#F3F3F3"
 browser="firefox"
 notify-send "editor: $EDITOR"
-
+if [ $XDG_SESSION_TYPE == "wayland" ];then
+  MENU=dmenu-wl
+else
+  MENU=dmenu
+fi
 cat ~/.config/bookmarks/* \
-    | dmenu -l 30 -p "$BROWSER bookmarks :" \
-    -fn "$font" -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color -nb $menu_bg_color | $browser
+    | $MENU -l 30 -p "$BROWSER bookmarks :" \
+    -fn "$font" \
+    -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color \
+    -nb $menu_bg_color # | $browser
