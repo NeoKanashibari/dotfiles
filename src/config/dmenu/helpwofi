@@ -1,0 +1,35 @@
+wofi [options]
+Options:
+--help		-h	Displays this help message
+--fork		-f	Forks the menu so you can close the terminal
+--conf		-c	Selects a config file to use
+--style		-s	Selects a stylesheet to use
+--color		-C	Selects a colors file to use
+--dmenu		-d	Runs in dmenu mode
+--show		-S	Specifies the mode to run in
+--width		-W	Specifies the surface width
+--height	-H	Specifies the surface height
+--prompt	-p	Prompt to display
+--xoffset	-x	The x offset
+--yoffset	-y	The y offset
+--normal-window	-n	Render to a normal window
+--allow-images	-I	Allows images to be rendered
+--allow-markup	-m	Allows pango markup
+--cache-file	-k	Sets the cache file to use
+--term		-t	Specifies the terminal to use when running in a term
+--password	-P	Runs in password mode
+--exec-search	-e	Makes enter always use the search contents not the first result
+--hide-scroll	-b	Hides the scroll bars
+--matching	-M	Sets the matching method, default is contains
+--insensitive	-i	Allows case insensitive searching
+--parse-search	-q	Parses the search text removing image escapes and pango
+--version	-v	Prints the version and then exits
+--location	-l	Sets the location
+--no-actions	-a	Disables multiple actions for modes that support it
+--define	-D	Sets a config option
+--lines		-L	Sets the height in number of lines
+--columns	-w	Sets the number of columns to display
+--sort-order	-O	Sets the sort order
+--gtk-dark	-G	Uses the dark variant of the current GTK theme
+--search	-Q	Search for something immediately on open
+--monitor	-o	Sets the monitor to open on

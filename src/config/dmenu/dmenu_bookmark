@@ -1,18 +1,21 @@
 #!/usr/bin/env bash
+
+set -x
+
 font="mononoki Nerd Font Mono:pixelsize=24:antialias=true:autohint=true"
 menu_color="#A353E1"
 menu_text_color="#F5F5F5"
 menu_bg_color="#505050"
 menu_select_bg_color="#F3F3F3"
 browser="firefox"
+xmenu_style="-fn ${font} -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color -nb $menu_bg_color"
 notify-send "editor: $EDITOR"
 if [ $XDG_SESSION_TYPE == "wayland" ];then
-  MENU=dmenu-wl
+	menu="/usr/local/bin/wofi -d"
 else
-  MENU=dmenu
+  menu="dmenu ${xmenu_style}"
 fi
-cat ~/.config/bookmarks/* \
-    | $MENU -l 30 -p "$BROWSER bookmarks :" \
-    -fn "$font" \
-    -sb $menu_color -sf $menu_select_bg_color -nf $menu_text_color \
-    -nb $menu_bg_color # | $browser
+
+str=$(cat ~/.config/bookmarks/* \ | $menu -p "$BROWSER bookmarks :")
+
+$str | ydotool type --file -
