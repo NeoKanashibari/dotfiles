@@ -16,3 +16,4 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 exec --no-startup-id waybar
+exec --no-startup-id dunst
