@@ -1,6 +1,8 @@
 function sshs() {
   for priv in $(file ~/.ssh/* | grep "private key" | awk -F: '{print $1}');do
-    ssh-add $priv
+      DISPLAY=5 SSH_ASKPASS=/home/$USER/.bin/ssh-auto-ask \
+      ssh-add ~/.ssh/$(basename $priv) \
+        <<< $(pass work/machines/ssh/admin@$(basename $priv))
   done
 }
 
