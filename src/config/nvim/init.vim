@@ -17,6 +17,10 @@ set nohls
 set undodir=~/.config/nvim/undodir
 set undofile
 set spell
+
+set exrc
+"set secure
+
 "
 if empty(glob(  '~/.local/share/nvim/site/autoload/plug.vim'))
     silent !curl -fLo $HOME/.local/share/nvim/site/autoload/plug.vim --create-dirs
