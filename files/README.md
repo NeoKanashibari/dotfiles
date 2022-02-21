@@ -51,3 +51,11 @@ gpg --trust KEY_ID
 ```
 git clone https://github.com/<username>/password-store.git ~/.password-store
 ```
+
+### Info
+
+Reset branch master to origin/master
+
+```sh
+git checkout -B master origin/master
+```
