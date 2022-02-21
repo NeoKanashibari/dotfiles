@@ -39,3 +39,5 @@ super + d;super + r
 	~/.config/dmenu/dmenu_repos
 super + d;super + b
 	~/.config/dmenu/dmenu_bookmark
+super + g
+	lutris
