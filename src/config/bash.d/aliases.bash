@@ -31,3 +31,12 @@ alias ipa="ip -br -4 addr"
 alias ipr="ip -br -4 route"
 
 [ -f "$(command -v nvim)" ] && alias vim="nvim"
+
+whaterr() {
+  if [[ ! -z $1 ]]; then
+    grep -wh "${1}" \
+    /usr/include/asm-generic/errno-base.h \
+    /usr/include/asm-generic/errno.h \
+   || echo "$@ code not found"
+  fi
+}
