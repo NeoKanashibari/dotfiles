@@ -90,3 +90,5 @@ sudo pacman -S grim slurp   # screenshot        \
 [ssh agent](https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login)
 [markdown linter](https://github.com/markdownlint/markdownlint)
 [wofi-style](https://raw.githubusercontent.com/dracula/wofi/master/style.css)
+[gef](https://gef.readthedocs.io/en/master/)
+[ANSI doc](https://gist.github.com/fnky/458719343aabd01cfb17a3a4f7296797)
