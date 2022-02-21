@@ -1,4 +1,6 @@
 set nocompatible | set encoding=UTF-8
+set exrc
+set secure
 
 " Install vim-plug if not already installed
 if empty(glob('~/.vim/autoload/plug.vim'))
