@@ -1,4 +1,5 @@
 window:
+  opacity: 0.85
   # Window dimensions (changes require restart)
   #
   # Specified in number of columns/lines, not pixels.
@@ -76,8 +77,6 @@ visual_bell:
   animation: EaseOutExpo
   duration: 100
   color: '0xffffff'
-
-background_opacity: 0.85
 
 debug:
   render_timer: false
