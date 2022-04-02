@@ -59,3 +59,21 @@ Reset branch master to origin/master
 ```sh
 git checkout -B master origin/master
 ```
+
+Cheater mode :)
+
+```sh
+curl cht.sh/rust/socket
+```
+
+Transfort docx to markdown
+
+```sh
+pandoc -f docx -t markdown foo.docx -o foo.markdown
+               -t gfm (GitHub-Flavored Markdown)
+               -t markdown_mmd (MultiMarkdown)
+               -t markdown (pandoc’s extended Markdown)
+               -t markdown_strict (original unextended Markdown)
+               -t markdown_phpextra (PHP Markdown Extra)
+               -t commonmark (CommonMark Markdown)
+```
