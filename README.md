@@ -5,10 +5,7 @@
 ### Arch Linux
 
 ```sh
-pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight  \
-xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm \
-ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof \
-openfortivpn openssh subversion git xclip tmux squashfs-tools strace
+pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof openfortivpn openssh subversion git xclip tmux squashfs-tools strace bash-completion dhclient grub feh unclutter compton sxhkd
 ```
 
 ## Configured software
@@ -74,14 +71,10 @@ echo "聯輦"
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
 
-## Introduce wayland support
+## Wayland applications
 
 ```sh
-sudo pacman -S grim slurp   # screenshot        \
-               alacritty    # terminal emulator \
-               sway         # window manager    \
-               wofi         # menu software     \
-               wl-clipboard # clipboard manager
+sudo pacman -S grim slurp alacritty sway wofi wl-clipboard
 ```
 
 ## Refs

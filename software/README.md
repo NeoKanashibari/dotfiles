@@ -25,10 +25,20 @@ make clean && git checkout -- . && git clean -fdx
 
 ## polybar
 
+### dependencies
+
+#### build
+
+sudo pacman -Syu cmake python pkg-config python-sphinx python-packaging
+
+#### runtime
+
+sudo pacman -Syu cairo xcb-util-image xcb-util-wm xcb-util-xrm xcb-util-cursor
+
+### build
 ```
 cd polybar
 git submodule init && git submodule update
 mkdir build && cmake ..
-make -j4 && sudo make install
+make && sudo make install
 ```
-
