@@ -24,7 +24,7 @@ super + shift + m
 super + {_,shift} + c
 	{discord,teams}
 super + {_,shift + }p
-	{gimp, mypaint}
+	{gimp, krita}
 super + shift + r
 	~/.config/bspwm/bspwmrc
 super + shift + v
