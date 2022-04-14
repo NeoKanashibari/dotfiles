@@ -23,11 +23,11 @@ bspc config normal_border_color  \#111111
 # TODO : systemd user services ?
 pidof polybar && kill $(pidof polybar)
 pidof sxhkd && kill $(pidof sxhkd)
-pidof compton && kill $(pidof compton)
+pidof picom && kill $(pidof picom)
 pidof unclutter && kill $(pidof unclutter)
 
 setxkbmap fr &
-compton &
+picom &
 unclutter &
 sxhkd 2>&1 | tee ~/.local/var/log/sxhkd.log &
 polybar bspwmbar 2>&1 | tee ~/.local/var/log/polybar.log &
