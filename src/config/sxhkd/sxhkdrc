@@ -16,7 +16,7 @@ super + a
 super + f
 	{firefox}
 super + {_,shift + }t
-	{st -f "mononoki Nerd Font Mono:pixelsize=18:antialias=true:autohint=true",alacritty}
+	{alacritty,st -f "mononoki Nerd Font Mono:pixelsize=18:antialias=true:autohint=true"}
 super + shift + a
 	slock -m "Locked at : $(date)"
 super + shift + m
