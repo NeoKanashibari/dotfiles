@@ -1,0 +1,11 @@
+[module/vpn]
+type = custom/script
+exec = $HOME/.config/polybar/polybar.d/vpnmanager
+click-left = $HOME/.config/polybar/polybar.d/vpnmanager --toggle-connection &
+click-right = $HOME/.config/polybar/polybar.d/vpnmanager --menu &
+#click-middle = $HOME/.config/polybar/vpnmanger --ip-address &
+interval = 5
+format = <label>
+format-background = ${color.background}
+
+; vim:ft=dosini
