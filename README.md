@@ -77,6 +77,17 @@ pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 sudo pacman -S grim slurp alacritty sway wofi wl-clipboard
 ```
 
+## systemd networkd
+
+```sh
+cat<EOF >/etc/systemd/network/20-wired.network
+[Match]
+Name=enp*
+[Network]
+DHCP=true
+EOF
+```
+
 ## Refs
 
 - [bspwm scratchpad](https://wiki.archlinux.org/title/Bspwm#Scratchpad)
