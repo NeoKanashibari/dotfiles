@@ -21,12 +21,12 @@ $ gpg --list-secret-keys user@example.com
 ### export your private key:
 
 ```sh
-gpg --export-secret-keys YOUR_ID_HERE > private.key
+gpg --export-secret-keys user@example.com > private.key
 ```
 
 Copy the key file to the other machine using a secure transport (scp is your friend).
 
-### import your privite key to another system
+### import your private key to another system
 
 ```sh
 scp private.key user@newmachine:
@@ -43,6 +43,7 @@ and public key first `gpg --delete-keys` and `gpg --delete-secret-keys`.
 ### trust your public keys ?
 
 ```sh
+gpg --edit-key user.example.com
 gpg --trust KEY_ID
 ```
 
@@ -76,4 +77,14 @@ pandoc -f docx -t markdown foo.docx -o foo.markdown
                -t markdown_strict (original unextended Markdown)
                -t markdown_phpextra (PHP Markdown Extra)
                -t commonmark (CommonMark Markdown)
+```
+
+
+### generate clangd completion for (neo)vim
+
+From a Makefile do
+
+```sh
+make clean
+bear -- make
 ```
