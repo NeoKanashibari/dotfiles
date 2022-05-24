@@ -1,8 +1,11 @@
 function sshs() {
   for priv in $(file ~/.ssh/* | grep "private key" | awk -F: '{print $1}');do
-      DISPLAY=5 SSH_ASKPASS=/home/$USER/.bin/ssh-auto-ask \
-      ssh-add ~/.ssh/$(basename $priv) \
-        <<< $(pass work/machines/ssh/admin@$(basename $priv))
+      if [[ $(basename $priv) = "id_ed25519" ]];then
+        ssh-add ~/.ssh/$(basename $priv)
+      else
+        DISPLAY=5 SSH_ASKPASS=/home/$USER/.bin/ssh-auto-ask \
+        ssh-add ~/.ssh/$(basename $priv) <<< $(pass ssh/$(basename $priv))
+      fi
   done
 }
 
