@@ -27,4 +27,5 @@ return require('packer').startup(function()
     },
   }
   use 'tanvirtin/monokai.nvim' -- Color
+  use 'SirVer/ultisnips'
 end)
