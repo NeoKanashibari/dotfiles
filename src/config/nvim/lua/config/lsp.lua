@@ -30,7 +30,6 @@ vim.cmd([[
 -- See: https://github.com/neovim/nvim-lspconfig/wiki/Autocompletion
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = cmp_nvim_lsp.update_capabilities(capabilities)
-
 capabilities.textDocument.completion.completionItem.documentationFormat = { 'markdown', 'plaintext' }
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 capabilities.textDocument.completion.completionItem.preselectSupport = true
@@ -90,30 +89,6 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<space>f', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 end
 
---[[
-
-Language servers setup:
-
-For language servers list see:
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-
-Bash --> bashls
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#bashls
-
-Python --> pyright
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#pyright
-
-C-C++ --> clangd
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#clangd
-
-HTML/CSS/JSON --> vscode-html-languageserver
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#html
-
-JavaScript/TypeScript --> tsserver
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#tsserver
-
---]]
-
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
 -- This is a workaround, maybe not work with some servers.
@@ -121,22 +96,13 @@ local root_dir = function()
   return vim.fn.getcwd()
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches.
--- Add your language server below:
+-- Language servers setup:
+-- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
 local servers = { 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'tsserver' }
-
--- Call setup
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
     root_dir = root_dir,
     capabilities = capabilities,
-    flags = {
-      -- default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
   }
 end
-
--- require'lspconfig'.clangd.setup{}
