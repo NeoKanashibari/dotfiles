@@ -11,7 +11,7 @@ g.mapleader = "<Space>"
 -----------------------------------------------------------
  opt.cursorline = true      -- Display line a cursor possition
 opt.colorcolumn = "80"      -- Line lenght marker at 80 columns
--- opt.textwidth = 80       -- Split line by marker columns
+opt.textwidth = 80          -- Split line by marker columns
 opt.splitright = true       -- Vertical split to the right
 opt.splitbelow = true       -- Horizontal split to the bottom
 opt.linebreak = true        -- TODO: What do this to ?
