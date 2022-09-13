@@ -5,7 +5,7 @@
 ### Arch Linux
 
 ```sh
-pacman -Syu man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof openfortivpn openssh subversion git xclip tmux squashfs-tools strace bash-completion dhclient grub feh unclutter picom sxhkd
+pacman -Syu archlinux-keyring man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof openfortivpn openssh subversion git xclip tmux squashfs-tools strace bash-completion dhclient grub feh unclutter picom sxhkd
 ```
 
 ## Configured software
