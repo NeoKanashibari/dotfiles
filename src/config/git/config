@@ -3,12 +3,14 @@
 [alias]
     st = status
     s = status --porcelain --ignore-submodules
-    nuke = clean -fdx
+    nuke = "!f() { git clean -fdx; }; f"
     dc = diff --cached
     l = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %an %C("#849598")<%an>%Creset' --abbrev-commit
     ls = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit origin/master..HEAD
     ls2 = log --branches --not --remotes
     ll = log --color --graph --pretty=format:'%Cgreen%h%Creset - %s %C(yellow)%d%Creset' --abbrev-commit --all
+    from = "!f() { git log --color --graph --abbrev-commit \"$1\"..HEAD; }; f"
+    f = ls --name-status
     last = log -1 --name-status
 [color]
     ui = auto
@@ -33,7 +35,8 @@
     ignorecase = false
     whitespace = cr-at-eol
     editor = vim
-    pager = less -x4
+    pager = delta
+
 [diff]
 	tool = vimdiff --no-prompt
 	noprefix = 1
@@ -42,3 +45,8 @@
 	conflictstyle = diff3
 [init]
         defaultBranch = master
+
+[delta]
+    side-by-side = true
+    line-numbers = true
+    zero-style = dim syntax
