@@ -53,6 +53,13 @@ gpg --trust KEY_ID
 git clone https://github.com/<username>/password-store.git ~/.password-store
 ```
 
+## use pinetry-tty with gpg-agent
+
+```
+sudo pacman -S pinentry
+echo "pinentry-program /usr/bin/pinentry-tty" >> ~/.gnupg/gpg-agent.conf
+```
+
 ### Info
 
 Reset branch master to origin/master
