@@ -2,6 +2,11 @@
 # ~/.bash_profile
 #
 SSH_ENV="$HOME/.ssh/agent-environment"
+
+export GPG_TTY=$(tty)
+export GPG_AGENT_INFO=`gpgconf --list-dirs agent-socket | tr -d '\n' && echo -n ::`
+#eval $(gpg-agent --daemon)
+
 function start_agent() {
   if [[ -z "$(pidof ssh-agent)" || ! -f "${SSH_ENV}" ]];then
     ssh-agent | sed 's/^echo/#echo/'> ${SSH_ENV}
