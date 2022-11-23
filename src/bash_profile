@@ -12,9 +12,8 @@ function start_agent() {
     ssh-agent | sed 's/^echo/#echo/'> ${SSH_ENV}
   fi
 }
-
 start_agent
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-[[ -z $DISPLAY && $(tty) == "/dev/tty1" && -x /usr/bin/startx ]] && startx || true
-[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty2" ]] && sway > ~/.local/sway.log || true
+[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]] && sway > ~/.local/sway.log || true
+[[ -z $DISPLAY && $(tty) == "/dev/tty2" && -x /usr/bin/startx ]] && startx || true
