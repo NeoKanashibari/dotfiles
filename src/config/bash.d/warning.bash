@@ -1,7 +1,7 @@
 #!/bin/bash
 # check dotfiles
 cd "$HOME" || exit
-pushd $(dirname $(readlink -f ~/.bashrc))
+pushd $(dirname $(readlink -f ~/.bashrc)) > /dev/null
 if [[ -n "$(git status --porcelain)" ]];then
     echo -e "\e[33m[WARN]\e[0m commit your config files!"
 fi
