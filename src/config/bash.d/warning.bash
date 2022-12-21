@@ -1,7 +1,8 @@
+#!/bin/bash
 # check dotfiles
-pushd "$(dirname $(readlink -f ~/.bashrc))" >/dev/null
-if [[ ! -z "$(git status --porcelain)" ]];then
-    rootrepo=$(git rev-parse --show-toplevel)
+cd "$HOME" || exit
+pushd $(dirname $(readlink -f ~/.bashrc))
+if [[ -n "$(git status --porcelain)" ]];then
     echo -e "\e[33m[WARN]\e[0m commit your config files!"
 fi
 popd >/dev/null
