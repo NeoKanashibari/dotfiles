@@ -39,8 +39,11 @@ If the key already existed on the second machine, the import will fail saying
 "Key already known". To force import, you will have to delete both the private
 and public key first `gpg --delete-keys` and `gpg --delete-secret-keys`.
 
+### Update expiration date
 
-### trust your public keys ?
+[update-key](https://www.g-loaded.eu/2010/11/01/change-expiration-date-gpg-key/)
+
+### trust your public keys
 
 ```sh
 gpg --edit-key user.example.com
