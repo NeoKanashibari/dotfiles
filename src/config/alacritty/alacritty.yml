@@ -108,7 +108,6 @@ cursor:
   style: Block
   unfocused_hollow: true
 live_config_reload: true
-alt_send_esc: true
 
 # Key bindings
 #
