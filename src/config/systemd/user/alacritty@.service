@@ -1,0 +1,7 @@
+[Unit]
+Description=alacritty - Terminal emulator
+Documentation=man:alacritty(5)
+
+[Service]
+Type=simple
+ExecStart=alacritty

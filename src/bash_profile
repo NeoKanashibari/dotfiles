@@ -15,5 +15,5 @@ function start_agent() {
 start_agent
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
-[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]] && sway > ~/.local/sway.log || true
-[[ -z $DISPLAY && $(tty) == "/dev/tty2" && -x /usr/bin/startx ]] && startx || true
+
+[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]] && systemctl start sway --user

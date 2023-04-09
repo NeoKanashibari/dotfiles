@@ -1,0 +1,7 @@
+[Unit]
+Description=Firefox - Web Browser
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+ExecStart=firefox

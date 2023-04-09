@@ -1,0 +1,9 @@
+[Unit]
+Description=sway - Wayland window manager
+Documentation=man:sway(5)
+
+[Service]
+Type=simple
+ExecStartPre=systemctl --user unset-environment WAYLAND_DISPLAY DISPLAY
+ExecStart=/usr/bin/sway
+ExecStartPost=systemctl --user show-environment
