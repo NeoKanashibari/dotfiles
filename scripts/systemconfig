@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DEST=$1
+USER=$2
+echo "setup_autologin for ${USER} on ${DEST}"
+sudo mkdir -p /etc/systemd/system/getty@${DEST}.service.d
+sudo sed 's/@USER@/${USER}/;s/@DEST@/${DEST}/g' ./systemwide/autologin.conf \
+    > /etc/systemd/system/getty@${DEST}.service.d/autologin.conf

@@ -21,6 +21,9 @@ case "${subcommand}" in
     check)
         scripts/sanity-check "${dest}"
         ;;
+    autologin)
+        setup_autologin tty1 ${USER}
+        ;;
     *) echo "Command not available"
         ;;
 esac
