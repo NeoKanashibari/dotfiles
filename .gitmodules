@@ -16,3 +16,7 @@
 [submodule "software/waybar"]
 	path = software/waybar
 	url = https://github.com/Alexays/Waybar.git
+[submodule "software/nerd-fonts"]
+    shallow = true
+	path = software/nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts.git
