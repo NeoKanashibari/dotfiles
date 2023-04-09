@@ -3,6 +3,12 @@ include ~/.config/sway/config.d/*
 
 output * bg $(find ~/wallpapers/ -mindepth 1| shuf | head -1) fill
 
+output 'Philips Consumer Electronics Company Philips FTV 0x00000101' {
+    res 3840x2160
+    bg $(find ~/wallpapers/ -mindepth 1| shuf | head -1) fill
+}
+
+
 input type:keyboard {
     repeat_delay 200
     repeat_rate 30
@@ -14,4 +20,5 @@ floating_modifier $mod normal
 # Reload the configuration file
 bindsym $mod+Shift+r reload
 exec --no-startup-id waybar
-exec --no-startup-id dunst
+
+exec systemctl --user import-environment

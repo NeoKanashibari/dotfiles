@@ -1,11 +1,32 @@
-# Dotfiles
+# NeoKanashibari Dotfiles
 
-## Host needed packages
+## Host packages
 
 ### Arch Linux
 
 ```sh
-pacman -Syu archlinux-keyring man-db man-pages xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev xorg-xfd xorg-xinit xorg-xrandr xorg-xset pass xdotool delta bspwm ranger firefox vim zathura zathura-djvu rsync nodejs firefox htop nmap lsof openfortivpn openssh subversion git xclip tmux squashfs-tools strace bash-completion dhclient grub feh unclutter picom sxhkd
+# first run
+pacman -Syu linux-firmware base grub sudo
+
+# Allways default
+pacman -Syu archlinux-keyring man-db man-pages bash-completion openssh
+
+# Xorg stuff
+pacman -Syu xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev
+pacman -Syu xorg-xinit xorg-xrandr xorg-xfd xorg-xset xdotool
+pacman -Syu bspwm unclutter picom feh xclip sxhkd
+
+# Wayland app
+pacman -Syu sway grim slurp alacritty wofi wl-clipboard
+
+# tools
+pacman -Syu pass ranger firefox tmux zathura zathura-djvu
+
+# dev tools
+pacman -Syu base-devel vim rsync htop nmap lsof git subversion tmux strace
+
+# work tools
+pacman -Syu squashfs-tools openfortivpn subversion
 ```
 
 ## Configured software
@@ -24,15 +45,6 @@ pacman -Syu archlinux-keyring man-db man-pages xorg-fonts-100dpi xorg-server xor
 * linuxcmd
 * bookmarks
 * dmenu
-
-## Docker
-
-```sh
-sudo pacman -S docker docker-compose
-sudo usermod -a -G docker $USER
-sudo systemctl enable docker.service
-reboot
-```
 
 ## Quickstart
 
@@ -71,13 +83,7 @@ echo "聯輦"
 pdftoppm -jpeg -r 300 <pdffile> -o <imageprefixname>
 ```
 
-## Wayland applications
-
-```sh
-sudo pacman -S grim slurp alacritty sway wofi wl-clipboard
-```
-
-## systemd networkd
+## systemd networkd configuration
 
 ```sh
 cat<EOF >/etc/systemd/network/20-wired.network
@@ -87,6 +93,16 @@ Name=enp*
 DHCP=true
 EOF
 ```
+
+## docker configuration
+
+```sh
+sudo pacman -Suy docker docker-compose docker-buildx
+sudo usermod -a -G docker $USER
+sudo systemctl enable docker.service
+reboot
+```
+
 
 ## Refs
 
