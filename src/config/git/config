@@ -1,9 +1,12 @@
+[init]
+    defaultBranch = master
 [push]
 	default = nothing
 [alias]
     st = status
     s = status --porcelain --ignore-submodules
     nuke = "!f() { git clean -fdx; }; f"
+    d = diff --color-words
     dc = diff --cached
     l = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %an %C("#849598")<%an>%Creset' --abbrev-commit
     ls = log --color --graph --pretty=format:'%Cgreen%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C("#849598")<%an>%Creset' --abbrev-commit origin/master..HEAD
@@ -34,19 +37,13 @@
     autocrlf = input
     ignorecase = false
     whitespace = cr-at-eol
-    editor = vim
-    pager = delta
-
+    editor = neovim
 [diff]
-	tool = vimdiff --no-prompt
+	tool = vimdiff
+	guitool = meld
 	noprefix = 1
+[difftool]
+    prompt = false
 [merge]
-	tool = vimdiff --no-prompt
+	tool = vimdiff
 	conflictstyle = diff3
-[init]
-        defaultBranch = master
-
-[delta]
-    side-by-side = true
-    line-numbers = true
-    zero-style = dim syntax
