@@ -1,0 +1,7 @@
+[Unit]
+Description=Chromium - Web Browser
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+ExecStart=chromium --ozone-platform-hint=auto
