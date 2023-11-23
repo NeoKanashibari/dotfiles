@@ -20,6 +20,3 @@
     shallow = true
 	path = software/nerd-fonts
 	url = https://github.com/ryanoasis/nerd-fonts.git
-[submodule "packages/chromium"]
-	path = packages/chromium
-	url = https://aur.archlinux.org/chromium-wayland-vaapi.git
