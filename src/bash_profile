@@ -16,4 +16,5 @@ start_agent
 
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
-[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]] && systemctl start sway --user
+#[[ -z $WAYLAND_DISPLAY && $(tty) == "/dev/tty1" ]] && systemctl start sway --user
+#sway
