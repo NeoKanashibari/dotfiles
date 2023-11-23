@@ -28,6 +28,12 @@ if filereadable(expand("~/.vim/autoload/plug.vim"))
     Plug 'tpope/vim-surround'
     Plug 'chrisbra/Colorizer'
     Plug 'kovetskiy/sxhkd-vim'
+
+    Plug 'prabirshrestha/vim-lsp'
+    Plug 'mattn/vim-lsp-settings'
+    Plug 'prabirshrestha/asyncomplete.vim'
+    Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
     call plug#end()
 else
     filetype plugin indent on
@@ -169,6 +175,9 @@ autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-z>"
 let g:UltiSnipsJumpBackwardTrigger="<c-a>"
+
+let g:lsp_diagnostics_enabled = 0         " disable diagnostics support
+
 
 " bitbake -------------------------------------------------------------------------------
 " Misc-----------------------------------------------------------------------------------
