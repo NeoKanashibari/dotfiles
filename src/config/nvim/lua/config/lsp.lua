@@ -98,7 +98,7 @@ end
 
 -- Language servers setup:
 -- https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-local servers = { 'rust_analyzer', 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'tsserver', 'cmake'}
+local servers = { 'rust_analyzer', 'bashls', 'pyright', 'clangd', 'html', 'cssls', 'tsserver', 'cmake' }
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
     on_attach = on_attach,
