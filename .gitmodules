@@ -10,12 +10,6 @@
 [submodule "software/dmenu"]
 	path = software/dmenu
 	url = https://git.suckless.org/dmenu
-[submodule "software/polybar"]
-	path = software/polybar
-	url = https://github.com/polybar/polybar.git
-[submodule "software/waybar"]
-	path = software/waybar
-	url = https://github.com/Alexays/Waybar.git
 [submodule "software/nerd-fonts"]
     shallow = true
 	path = software/nerd-fonts
