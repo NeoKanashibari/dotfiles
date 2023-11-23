@@ -27,8 +27,8 @@ alias dn="date +%Y%m%d-%s"
 alias today="mkdir $(date +%Y%m%d-%H.%M.%S)"
 
 # IP
-alias ipa="ip -br -4 addr"
-alias ipr="ip -br -4 route"
+alias ipa="ip -c -br -4 addr"
+alias ipr="ip -c -br -4 route"
 
 [ -f "$(command -v nvim)" ] && alias vim="nvim"
 
