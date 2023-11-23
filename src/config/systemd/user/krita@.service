@@ -1,0 +1,7 @@
+[Unit]
+Description=Krita drawing application
+After=graphical-session.target
+Requires=graphical-session.target
+
+[Service]
+ExecStart=krita
