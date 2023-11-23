@@ -46,4 +46,5 @@
     prompt = false
 [merge]
 	tool = vimdiff
+	guitool = meld
 	conflictstyle = diff3
