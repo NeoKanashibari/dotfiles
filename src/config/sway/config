@@ -2,13 +2,33 @@ set $mod Mod4
 include ~/.config/sway/config.d/*
 
 output * bg $(find ~/wallpapers/ -mindepth 1| shuf | head -1) fill
-
 output 'Philips Consumer Electronics Company Philips FTV 0x00000101' {
     res 3840x2160
+    scale 2
     bg $(find ~/wallpapers/ -mindepth 1| shuf | head -1) fill
 }
 
 
+
+# Input device: HUION Huion Tablet Pad
+#   Type: Tablet pad
+#   Identifier: 9580:110:HUION_Huion_Tablet_Pad
+#   Product ID: 110
+#   Vendor ID: 9580
+#   Libinput Send Events: enabled
+#
+# Input device: HUION Huion Tablet Pen
+#   Type: Tablet tool
+#   Identifier: 9580:110:HUION_Huion_Tablet_Pen
+#   Product ID: 110
+#   Vendor ID: 9580
+#   Libinput Send Events: enabled
+
+input type:tablet_tool {
+    map_to_output DP-2
+}
+# set $map-to-active swaymsg input type:tablet_tool map_to_output `swaymsg -t get_outputs | jq -r '.[] | select(.focused == true) | .name'`
+# exec $map_to_output
 input type:keyboard {
     repeat_delay 200
     repeat_rate 30
