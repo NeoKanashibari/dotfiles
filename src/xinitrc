@@ -1,2 +1,3 @@
+xset r rate 180 40 &
 setxkbmap fr &
-bspwm
+i3
