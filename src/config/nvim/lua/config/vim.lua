@@ -5,6 +5,7 @@ local opt = vim.opt -- same as vim `set ...`
 -----------------------------------------------------------
 opt.clipboard = 'unnamedplus' -- Use system wide clipboard
 g.mapleader = "<Space>"
+opt.mouse = ""
 -- colorscheme monokai
 -----------------------------------------------------------
 -- UI
