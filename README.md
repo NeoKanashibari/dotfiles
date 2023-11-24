@@ -5,18 +5,19 @@
 ### Arch Linux
 
 ```sh
-# first run
+# Allways (before first start (chroot step)
 pacman -Syu linux-firmware base grub sudo
 
-# Allways default
+# Allways (at host first start)
 pacman -Syu archlinux-keyring man-db man-pages bash-completion openssh
 
-# Xorg stuff
+# Xorg
 pacman -Syu xorg-fonts-100dpi xorg-server xorg-xbacklight xorg-xev
 pacman -Syu xorg-xinit xorg-xrandr xorg-xfd xorg-xset xdotool
 pacman -Syu bspwm unclutter picom feh xclip sxhkd
+pacman -Suy i3 perl-anyevent-i3
 
-# Wayland app
+# Wayland
 pacman -Syu sway grim slurp alacritty wofi wl-clipboard
 
 # tools
