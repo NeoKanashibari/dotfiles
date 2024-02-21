@@ -1,5 +1,11 @@
 # Kanshibari HOME
 
+50:C2:75:37:41:54 Jabra Evolve2 65
+sudo pacman -S bluez bluez-utils pulseaudio-bluetooth
+sudo systemctl enable bluetooth.service
+sudo systemctl start bluetooth.service
+bluetoothctl do : power scan pair trust connect
+
 # GPG key
 
 ## [CreateGPG](https://medium.com/@tomferon/sharing-passwords-with-git-gpg-and-pass-628c2db2a9de)
