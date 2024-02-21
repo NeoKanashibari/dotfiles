@@ -10,7 +10,3 @@
 [submodule "software/dmenu"]
 	path = software/dmenu
 	url = https://git.suckless.org/dmenu
-[submodule "software/nerd-fonts"]
-    shallow = true
-	path = software/nerd-fonts
-	url = https://github.com/ryanoasis/nerd-fonts.git
