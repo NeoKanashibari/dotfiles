@@ -4,6 +4,7 @@
 vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
+  use 'brenoprata10/nvim-highlight-colors'
   use 'wbthomason/packer.nvim' -- Packer can manage itself
   use 'neovim/nvim-lspconfig' -- Collection of configurations for the built-in LSP client
 

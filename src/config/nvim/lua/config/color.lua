@@ -12,6 +12,9 @@ if not status_ok then
   return
 end
 
+-- configure the colors highliter
+require('nvim-highlight-colors').setup {}
+
 -- OneDark styles: dark, darker, cool, deep, warm, warmer, light
 require('monokai').setup {
   style = 'darker',
