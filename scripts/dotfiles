@@ -2,6 +2,9 @@
 
 dest="${1}"
 
+rm -rf ${dest}/.bashrc
+rm -rf ${dest}/.bash_profile
+
 [ ! -d "${dest}" ] && mkdir "${dest}"
 find src -mindepth 1 -type d -print \
   | sed "s|src/\(.*\)|$dest/.\1|g" | xargs -l mkdir -vp
