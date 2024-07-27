@@ -3,14 +3,14 @@ local opt = vim.opt -- same as vim `set ...`
 -----------------------------------------------------------
 -- General
 -----------------------------------------------------------
-opt.clipboard = 'unnamedplus' -- Use system wide clipboard
-g.mapleader = "<Space>"
+opt.clipboard = 'unnamed,unnamedplus' -- Use system wide clipboard
+g.mapleader = " "
+g.maplocalleader = " "
 opt.mouse = ""
--- colorscheme monokai
 -----------------------------------------------------------
 -- UI
 -----------------------------------------------------------
- opt.cursorline = true      -- Display line a cursor possition
+opt.cursorline = true       -- Display line a cursor possition
 opt.colorcolumn = "80"      -- Line lenght marker at 80 columns
 opt.textwidth = 80          -- Split line by marker columns
 opt.splitright = true       -- Vertical split to the right
@@ -22,12 +22,14 @@ opt.termguicolors = true    -- Enable 24-bit RGB colors
 -----------------------------------------------------------
 -- Maybe this one will be a pain (yes this also ignorecase for sed)
 -- opt.ignorecase = true       -- Ignore case letters when search
+-- opt.smartcase = true       -- Ignore case letters when search
 opt.hlsearch = false        -- no search highlight
 -----------------------------------------------------------
 -- Ruler
 -----------------------------------------------------------
 opt.number = true
 opt.relativenumber = true
+opt.scrolloff = 8
 -----------------------------------------------------------
 -- Tabs, indent
 -----------------------------------------------------------
@@ -42,11 +44,12 @@ opt.hidden = true           -- Enable background buffers
 opt.history = 100           -- Remember N lines in history
 opt.lazyredraw = true       -- Faster scrolling
 opt.synmaxcol = 240         -- Max column for syntax highlight
-opt.updatetime = 700        -- ms to wait for trigger an event
+opt.updatetime = 50        -- ms to wait for trigger an event
 opt.swapfile = false        -- Don't use swapfile
 -- TODO
 -- opt.expandtab = true
 -- opt.nowrap = true
 -- opt.laststatus=2
 --
+opt.signcolumn = "yes"
 opt.completeopt = 'menuone,noinsert,noselect'
