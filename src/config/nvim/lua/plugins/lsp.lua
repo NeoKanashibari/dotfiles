@@ -15,6 +15,8 @@ local function config_lsp()
         --  cmake complete is available in the AUR those install those:
         --  https://aur.archlinux.org/packages/cmake-format
         --  https://aur.archlinux.org/packages/cmake-language-server
+        zls = {},
+        denols = {},
         cmake = {},
         clangd = {},
         pylsp= {},
